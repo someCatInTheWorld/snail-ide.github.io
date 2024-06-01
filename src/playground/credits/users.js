@@ -141,6 +141,7 @@ const snDev = [
     'nmsderp',
     'cesderp14',
     'someCatInTheWorld',
+    'Plungebot',
 ].map(fromHardcodedGithub);
 const snContributeCodeBerg = [
     'ACat'
@@ -167,10 +168,12 @@ const extensionDevelopers = [
     'griffpatch',
     'DT-is-not-available',
     'SharkPool-SP',
+    'GingerNinjaStickdudeWorld',
     'Vadik1',
     'MikeDev101',
     'LilyMakesThings',
-    'CharcoalAfterlife'
+    'CharcoalAfterlife',
+    'pooiod'
 ].map(fromHardcodedGithub);
 
 export default {

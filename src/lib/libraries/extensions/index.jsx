@@ -2,6 +2,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import VideoSharing from './VidShare/VideoSharing.svg';
 import NoahgptThumb from './noahgpt/costume1.svg';
 import typescriptIcon from './snail-ide/typescript.svg';
 import twGalleryIcon from './snail-ide/turbowarpgallery.svg';
@@ -234,6 +235,15 @@ const menuItems = [
         collaborator: 'pooiod7',
         tags: ['penguinmod'],
         description: 'Share your screen and get the current frame as a image.',
+        featured: true
+    },
+    {
+        name: 'VideoSharing',
+        extensionId: 'https://editor.snail-ide.com/VideoSharing.js',
+        iconURL: VideoSharing,
+        tags: ['penguinmod'],
+        description: 'Share your screen and camera.',
+        collaborator: 'pooiod7',
         featured: true
     },
     {
@@ -1099,6 +1109,15 @@ const menuItems = [
         description: "Play videos from URLs.",
         featured: true
     },
+    {
+        name: 'Time Utils',
+        extensionId: 'https://editor.snail-ide.com/Time_Utilities.js',
+        iconURL: 'https://editor.snail-ide.com/time.svg',
+        collaborator: 'GingerNinjaStickdudeWorld',
+        tags: ['penguinmod'],
+        description: "Simple blocks to handle time.",
+        featured: true
+    },
 
     {
         name: '3D VR',
@@ -1577,6 +1596,15 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'i was bored ok',
+            featured: true,
+        },
+        {
+            name: 'p5.js',
+            extensionId: 'https://editor.snail-ide.com/p5.js',
+            collaborator: 'Mr_rudy/nmsderp',
+            iconURL: 'https://editor.snail-ide.com/p5js.png',
+            tags: ['penguinmod'],
+            description: 'A more powerful alternative to the Pen extension.',
             featured: true,
         },
         {

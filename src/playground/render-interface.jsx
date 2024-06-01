@@ -23,6 +23,7 @@ import { FormattedMessage, defineMessages, injectIntl, intlShape } from 'react-i
 import { getIsLoading } from '../reducers/project-state.js';
 import DOMElementRenderer from '../containers/dom-element-renderer.jsx';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
+import Comments from '../components/comments/comments.jsx';
 import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
 import TWProjectMetaFetcherHOC from '../lib/tw-project-meta-fetcher-hoc.jsx';
 import TWStateManagerHOC from '../lib/tw-state-manager-hoc.jsx';
@@ -317,9 +318,14 @@ class Interface extends React.Component {
                     />
                     {isHomepage ? (
                         <React.Fragment>
-                        <div className={styles.remixWarningBox}>
-                                    <p>A few extensions have been removed from the editor, this will NOT break you're old projects it just means you can't access them in new projects, this was to stop Snail IDE from having too big of a copyright issue. All other extensions should be allowed on our site, if you would like you're extension removed please contact one of the devs.</p>
-                            </div>
+                            {projectId && projectId !== '0' ? (
+                                <div className={styles.remixWarningBox}>
+                                    <p>This program is free software: you can redistribute it and/or modify
+                                        it under the terms of the GNU General Public License as published by
+                                        the Free Software Foundation, either version 3 of the License, or
+                                        (at your option) any later version.</p>
+                                </div>
+                            ) : null}
                             {/* project not approved message */}
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.accepted == false) ? (
                                 <div className={styles.remixWarningBox}>
@@ -399,44 +405,23 @@ class Interface extends React.Component {
                             {projectId && projectId !== '0' && (
                                 <div>
                                     <div className={styles.centerSector}>
-                                    <a
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        href={`https://snail-ide.com/report?type=project&id=${projectId}`}
-                                        className={styles.reportLink}
-                                    >
-                                        <img
-                                        src="https://studio.penguinmod.com/report_flag.png"
-                                        alt="!"
-                                        />
-                                        {'Report'}
-                                    </a>
-                                    </div>
-                                    <div className={styles.centerSector}>
-                                    <a
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        href="#"
-                                        className={styles.profilelink}
-                                        onClick={() => {
-                                        const projectDetails = getProjectDetailsById(window.LastFetchedProject.remix);
-                                        if (projectDetails && projectDetails.author) {
-                                            const username = projectDetails.author.username;
-                                            const profileUrl = `https://www.snail-ide.com/profile?user=${username}`;
-                                            window.open(profileUrl);
-                                        } else {
-                                            console.error("Author details not available.");
-                                            // Optionally, you can handle this case by setting a default author name or showing a message to the user
-                                        }
-                                        }}
-                                    >
-                                        {'View Profile'}
-                                    </a>
+                                        <a
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            href={`https://snail-ide.com/report?type=project&id=${projectId}`}
+                                            className={styles.reportLink}
+                                        >
+                                            <img
+                                                src="https://studio.penguinmod.com/report_flag.png"
+                                                alt="!"
+                                            />
+                                            {'Report'}
+                                        </a>
                                     </div>
                                     <div className={styles.centerSector}>
                                     </div>
                                 </div>
-                                )}
+                            )}
 
                             <div className={styles.section}>
                                 <FeaturedProjects />
