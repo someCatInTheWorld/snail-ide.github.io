@@ -388,6 +388,19 @@
         "rotationCenterY": 360
     },
     {
+        "name": "Ducks",
+        "tags": [
+            "outdoors",
+            "nature"
+        ],
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "rotationCenterX": 480,
+        "rotationCenterY": 360,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/user/backdrops/ducks.png"
+    },
+    {
         "name": "Farm",
         "tags": [
             "outdoors",
