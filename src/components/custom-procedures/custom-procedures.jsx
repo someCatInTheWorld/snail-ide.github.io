@@ -229,7 +229,7 @@ const CustomProcedures = props => (
                     role="button"
                     tabIndex="0"
                     onClick={props.onAddCommand}
-                    display="none" //shhh
+                    style="display: none;" //shhh
                 >
                     <img
                         className={styles.optionIcon}
