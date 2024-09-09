@@ -228,6 +228,32 @@ const CustomProcedures = props => (
                     className={styles.optionCard}
                     role="button"
                     tabIndex="0"
+                    onClick={props.onAddCommand}
+                    display="none" //shhh
+                >
+                    <img
+                        className={styles.optionIcon}
+                        src={stackBlockIcon}
+                    />
+                    <div className={styles.optionTitle}>
+                        <FormattedMessage
+                            defaultMessage="Add an input"
+                            description="Label for button to add a command input"
+                            id="gui.customProcedures.addAnInputCommand"
+                        />
+                    </div>
+                    <div className={styles.optionDescription}>
+                        <FormattedMessage
+                            defaultMessage="command"
+                            description="Description of the command input type"
+                            id="gui.customProcedures.commandType"
+                        />
+                    </div>
+                </div>
+                <div
+                    className={styles.optionCard}
+                    role="button"
+                    tabIndex="0"
                     onClick={props.onAddLabel}
                 >
                     <img
@@ -396,6 +422,7 @@ CustomProcedures.propTypes = {
     componentRef: PropTypes.func.isRequired,
     intl: intlShape,
     onAddBoolean: PropTypes.func.isRequired,
+    onAddCommand: PropTypes.func.isRequired,
     onAddLabel: PropTypes.func.isRequired,
     onAddTextNumber: PropTypes.func.isRequired,
     onCancel: PropTypes.func.isRequired,
