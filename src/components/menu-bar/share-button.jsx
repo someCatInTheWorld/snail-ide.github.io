@@ -28,7 +28,7 @@ const getProjectUri = () => new Promise(resolve => {
 const isUploadAvailable = async () => {
     let res = null;
     try {
-        res = await fetch('https://projects.penguinmod.com/api');
+        res = await fetch('https://projects.penguinmod.com/api/v1');
     } catch {
         // failed to fetch entirely
         return false;
