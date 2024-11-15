@@ -164,7 +164,7 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://jwklong.github.io/penguinmod.github.io/PenguinMod-Packager">
+                    <a href="https://studio.penguinmod.com/PenguinMod-Packager">
                         {/* Do not translate */}
                         {'PenguinMod Packager'}
                     </a>
@@ -450,7 +450,7 @@ class Interface extends React.Component {
                                             className={styles.shareLink}
                                         >
                                             <img
-                                                src="share_project.png"
+                                                src="/share_project.png"
                                                 alt=">"
                                             />
                                             {'Copy Link'}
