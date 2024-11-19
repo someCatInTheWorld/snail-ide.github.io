@@ -628,6 +628,13 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         <block id="forever" type="control_forever"/>
+        <block id="for_each" type="control_for_each">
+            <value name="VALUE">
+                <shadow type="math_whole_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
         <block type="control_exitLoop"/>
         <block type="control_continueLoop"/>
         ${blockSeparator}
@@ -654,13 +661,6 @@ const control = function (isInitialSetup, isStage) {
         <block id="wait_until" type="control_wait_until"/>
         <block id="repeat_until" type="control_repeat_until"/>
         <block id="while" type="control_while"/>
-        <block id="for_each" type="control_for_each">
-            <value name="VALUE">
-                <shadow type="math_whole_number">
-                    <field name="NUM">10</field>
-                </shadow>
-            </value>
-        </block>
         <block type="control_if_return_else_return">
             <value name="boolean"></value>
             <value name="TEXT1">
