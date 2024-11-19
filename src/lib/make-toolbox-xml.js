@@ -1000,16 +1000,33 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
-        <block type="operator_advMath">
-            <value name="ONE">
+        <block type="operator_power">
+            <value name="NUM1">
                 <shadow type="math_number">
-                    <field name="NUM">1</field>
+                    <field name="NUM"/>
                 </shadow>
             </value>
-            <field name="OPTION">^</field>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_advMathExpanded">
+            <value name="ONE">
+                <shadow type="math_number">
+                    <field name="NUM">3</field>
+                </shadow>
+            </value>
             <value name="TWO">
                 <shadow type="math_number">
                     <field name="NUM">2</field>
+                </shadow>
+            </value>
+            <field name="OPTION">root</field>
+            <value name="THREE">
+                <shadow type="math_number">
+                    <field name="NUM">16</field>
                 </shadow>
             </value>
         </block>
@@ -1212,7 +1229,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
-            <block type="operator_getLettersFromIndexToIndexInText">
+            <block type="operator_getLettersFromIndexToIndexInTextFixed">
                 <value name="INDEX1">
                     <shadow type="math_number">
                         <field name="NUM">2</field>
