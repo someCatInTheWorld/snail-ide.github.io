@@ -9,6 +9,7 @@ export default [
     { tag: 'noisemaker', intlLabel: messages.noisemaker },
     { tag: 'datamgmt', intlLabel: messages.datamgmt },
     { tag: 'hardware', intlLabel: messages.hardware },
+    { tag: 'ai', intlLabel: messages.categoryai },
     { tag: 'divider2', intlLabel: messages.scratch, type: 'divider' },
     { tag: 'categoryexpansion', intlLabel: messages.categoryexpansion },
     { tag: 'programminglanguage', intlLabel: messages.programminglanguage },
@@ -20,7 +21,4 @@ export default [
     { tag: 'custom', intlLabel: messages.customextension, type: 'custom', func: (library) => {
         library.select(''); // selects custom extension since it's id is ''
     } },
-    { tag: 'hardware', intlLabel: messages.categoryhardware },
-    { tag: 'builders', intlLabel: messages.categorybuilders },
-    { tag: 'ai', intlLabel: messages.categoryai },
 ];

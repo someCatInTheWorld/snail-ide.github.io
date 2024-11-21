@@ -109,6 +109,13 @@ const Credits = () => (
             <p>
                 <a href="https://snail-ide.com">snail-ide.com</a> is provided by <a href="https://scratch.mit.edu/users/dumorando/">dumorando</a>
             </p>
+        </section>
+        <section>
+            <h2>Costumes</h2>
+            <p><i>
+                If you are an costume designer who wants their costume removed from Snail IDE's costume list,
+                contact us as soon as you can. We'll get it removed as soon as we are able to.
+            </i></p>
             <p>
                 All Snail IDE costumes are downloaded or created from:
                 <ul>
@@ -119,12 +126,18 @@ const Credits = () => (
                 </ul>
                 All costumes exclusive to Snail IDE or PenguinMod are included under Public Domain licenses or licenses such as MIT and CC0.
             </p>
-            <p>This is the current list of user-submitted costume creators:</p>
+            <p>This is the current list of PenguinMod's user-submitted costume creators that have been inherited by Snail IDE:</p>
             <UserList users={UserData.pmCostumeSubmittors} />
             <p><i>The list order is randomized on each refresh.</i></p>
+        </section> 
+        <section>
             <h2>Sound Effects</h2>
+            <p><i>
+                If you are an sound designer who wants their sound removed from Snail IDE's sound list,
+                contact us as soon as you can. We'll get it removed as soon as we are able to.
+            </i></p>
             <p>
-            All Snail IDE sounds are downloaded or created from:
+                All Snail IDE sounds are downloaded or created from:
                 <ul>
                     <li><a href="https://freesound.org/">https://freesound.org/</a></li>
                     <li><a href="https://archive.org/">https://archive.org/</a></li>
@@ -133,7 +146,7 @@ const Credits = () => (
                 </ul>
                 All sounds exclusive to Snail IDE or PenguinMod are included under Public Domain licenses or licenses such as MIT and CC0.
             </p>
-            <p>This is the current list of user-submitted sound creators:</p>
+            <p>This is the current list of PenguinMod's user-submitted sound creators that have been inherited by Snail IDE:</p>
             <UserList users={UserData.pmSoundSubmittors} />
             <p><i>The list order is randomized on each refresh.</i></p>
         </section>
@@ -143,7 +156,7 @@ const Credits = () => (
         <section>
             <h2>Extensions</h2>
             <p><i>
-                If you are an extension developer who wants their extension removed from PenguinMod's extensions list,
+                If you are an extension developer who wants their extension removed from Snail IDE's extensions list,
                 contact us as soon as you can. We'll get it removed as soon as we are able to.
             </i></p>
             <p>

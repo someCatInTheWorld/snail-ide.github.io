@@ -312,10 +312,9 @@ class Interface extends React.Component {
         }
         window.addEventListener('message', (event) => {
             if (event.origin !== 'https://www.snail-ide.com') return;
-               this.setState({ loginData: event.data });
-               console.log(event.data);
-            }
-        );
+            this.setState({ loginData: event.data });
+            console.log(event.data);
+        });
     }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
@@ -406,7 +405,7 @@ class Interface extends React.Component {
                                 className={styles.projectAuthorImage}
                                 title={extraProjectInfo.author}
                                 alt={extraProjectInfo.author}
-                                src={`https://trampoline.turbowarp.org/avatars/by-username/$${extraProjectInfo.author}`}
+                                src={`https://trampoline.turbowarp.org/avatars/by-username/${extraProjectInfo.author}`}
                             />
                         </a>
                         <div className={styles.projectMetadata}>
@@ -433,7 +432,7 @@ class Interface extends React.Component {
                                 <div className={styles.remixWarningBox}>
                                     <p>
                                         <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
-                                            This program is free software: you can redistribute it and/or modify
+                                            "{<span dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />}" is free software: you can redistribute it and/or modify
                                             it under the terms of the GNU General Public License as published by
                                             the Free Software Foundation, either version 3 of the License, or
                                             (at your option) any later version.
@@ -441,12 +440,6 @@ class Interface extends React.Component {
                                     </p>
                                 </div>
                             ) : null}
-                            {/* project not approved message */}
-                            {(!extraProjectInfo.accepted) && (
-                                <div className={styles.remixWarningBox}>
-                                    <p>This project is not approved. Be careful when running this project.</p>
-                                </div>
-                            )}
                             {/* project not approved message */}
                             {(!extraProjectInfo.accepted) && (
                                 <div className={styles.remixWarningBox}>

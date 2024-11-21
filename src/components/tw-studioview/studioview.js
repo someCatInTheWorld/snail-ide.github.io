@@ -252,7 +252,7 @@ StudioView.prototype.loadNextPage = function () {
             var p = rawProjects[i];
             projects.push({
                 id: p.id,
-                title: p.title,
+                title: p.name,
                 author: p.author.username,
                 featured: p.featured,
             });
@@ -286,7 +286,7 @@ StudioView.prototype.loadNextPage = function () {
         this.ended = true;
     }.bind(this);
 
-    var url = StudioView.STUDIO_API + "/projects/getprojects"
+    var url = StudioView.STUDIO_API + "/pmWrapper/projects"
     xhr.open('GET', url);
     xhr.send();
 };

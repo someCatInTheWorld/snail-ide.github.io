@@ -450,20 +450,20 @@ const menuItems = [
         name: 'TurboBuilder - Dev Branch',
         href: 'https://turbobuilder-dev.vercel.app/',
         extensionId: 'special_turboBuilder',
-        iconURL: 'https://studio.penguinmod.com/static/assets/78d464ee4e15000ce44b841ff2f4c518.png',
+        iconURL: turboBuilderDevIcon,
         description: 'Create your own amazing extensions using a scratch-based UI!',
         collaborator: 'Started by JeremyGamer13, continued by jwklong',
-        tags: ['builders'],
+        tags: ['extcreate'],
         featured: true
     },
     {
         name: 'TurboBuilder',
         href: 'https://turbobuilder-dev.vercel.app/',
         extensionId: 'special_turboBuilder',
-        iconURL: 'https://studio.penguinmod.com/static/assets/78d464ee4e15000ce44b841ff2f4c518.png',
+        iconURL: turboBuilderIcon,
         description: 'Create your own amazing extensions using a scratch-based UI!',
         collaborator: 'Started by JeremyGamer13, continued by jwklong',
-        tags: ['builders'],
+        tags: ['extcreate'],
         disabled: true,
         featured: true
     },
@@ -475,7 +475,7 @@ const menuItems = [
         insetIconURL: extCreateInset,
         description: 'Snail IDE version of TurboBuilder',
         collaborator: 'Started by JeremyGamer13, continued by jwklong, modified by nmsderp',
-        tags: ['builders'],
+        tags: ['extcreate'],
         featured: true
     },
     {
@@ -485,7 +485,7 @@ const menuItems = [
         iconURL: 'https://u.cubeupload.com/Mr_rudy/costume1.png',
         description: 'Create your own extensions using Blockly.',
         collaborator: 'chickencuber',
-        tags: ['builders'],
+        tags: ['extcreate'],
         featured: true
     },
     {
@@ -787,16 +787,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Zip',
-        extensionId: 'https://extensions.turbowarp.org/CST1229/zip.js',
-        iconURL: 'https://extensions.turbowarp.org/images/CST1229/zip.svg',
-        insetIconURL: turbowarpIcon,
-        tags: ['turbowarp', 'datamgmt'],
-        description: 'Create and edit .zip format files, including .sb3 files.',
-        twDeveloper: 'CST1229',
-        featured: true
-    },
-    {
         name: 'Pen+',
         extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/PenPlus.js',
         tags: ['categoryexpansion', 'graphics'],
@@ -920,15 +910,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Tile Grids',
-        extensionId: 'https://extensions.penguinmod.com/extensions/SharkPool/Tile-Grids.js',
-        iconURL: 'https://extensions.penguinmod.com/images/SharkPool/Tile-Grids.svg',
-        tags: ['penguinmod'],
-        description: 'Place sprites on grids.',
-        extDeveloper: 'SharkPool-SP',
-        featured: true
-    },
-    {
         name: 'Canvas Effects',
         extensionId: 'theshovelcanvaseffects',
         iconURL: theshovelCanvasEffectsIcon,
@@ -1042,15 +1023,6 @@ const menuItems = [
         iconURL: jgScriptsExtensionIcon,
         tags: ['penguinmod', 'datamgmt'],
         description: 'Create compiled scripts with blocks while the project is running.',
-        featured: true
-    },
-    {
-        name: 'Pang API',
-        extensionId: 'https://extensions.penguinmod.com/extensions/SammerLOL/pangapi.js',
-        iconURL: 'https://extensions.penguinmod.com/images/SammerLOL/pangapi.png',
-        tags: ['penguinmod'],
-        description: 'Fetch information from the PenguinMod API.',
-        extDeveloper: 'oc9x97',
         featured: true
     },
     {
@@ -1202,16 +1174,6 @@ const menuItems = [
         twDeveloper: 'LilyMakesThings'
     },
     {
-        name: 'Skins',
-        extensionId: 'https://extensions.turbowarp.org/Lily/Skins.js', // update reference once file names are updated
-        tags: ['turbowarp'],
-        iconURL: 'https://extensions.turbowarp.org/images/Lily/Skins.svg',
-        insetIconURL: turbowarpIcon,
-        description: 'Have your sprites render as other images or costumes',
-        featured: true,
-        twDeveloper: 'LilyMakesThings'
-    },
-    {
         name: 'Longman Dictionary',
         extensionId: 'https://extensions.turbowarp.org/veggiecan/LongmanDictionary.js', // update reference once file names are updated
         tags: ['turbowarp'],
@@ -1318,54 +1280,6 @@ const menuItems = [
         iconURL: jgScratchAuthExtensionIcon,
         tags: ['penguinmod'],
         description: "Interact with Scratch Authentication to prove the player is a real scratch user.",
-        featured: true
-    },
-    {
-        name: 'Video',
-        extensionId: 'https://extensions.turbowarp.org/Lily/Video.js',
-        iconURL: 'https://extensions.turbowarp.org/images/Lily/Video.svg',
-        insetIconURL: turbowarpIcon,
-        twDeveloper: 'LillyMakesThings',
-        tags: ['turbowarp'],
-        description: "Play videos from URLs.",
-        featured: true
-    },
-    {
-        name: 'Time Utils',
-        extensionId: 'https://editor.snail-ide.com/Time_Utilities.js',
-        iconURL: 'https://editor.snail-ide.com/time.svg',
-        collaborator: 'GingerNinjaStickdudeWorld',
-        tags: ['penguinmod'],
-        description: "Simple blocks to handle time.",
-        featured: true
-    },
-
-    {
-        name: '3D VR',
-        extensionId: 'jg3dVr',
-        iconURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJsXcntVmSk264zyLaS3GdbOBQPhk3JjE5Vg&usqp=CAU',
-        tags: ['penguinmod'],
-        description: "Unfinished PenguinMod Extension.",
-        collaborator: "PenguinMod",
-        featured: true
-    },
-
-    // https://extensions.turbowarp.org/shreder95ua/resolution.js
-    {
-        name: 'Screen Resolution',
-        extensionId: 'https://extensions.turbowarp.org/shreder95ua/resolution.js',
-        iconURL: 'https://extensions.turbowarp.org/images/shreder95ua/resolution.svg',
-        twDeveloper: 'shreder95ua',
-        description: 'Get the resolution of the primary screen.',
-        featured: true
-
-    },
-    {
-        name: 'TypeScript',
-        extensionId: 'typescratch',
-        iconURL: typescriptIcon,
-        tags: ['penguinmod', 'programminglanguage'],
-        description: "Similar to the JavaScript extension but for TypeScript",
         featured: true
     },
     {
@@ -1997,14 +1911,6 @@ if (IsLocal || IsLiveTests) {
         },
         
         {
-            name: 'Inline Blocks',
-            extensionId: 'pmInlineBlocks',
-            iconURL: pmInlineBlocksExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'Create quick blocks for simple tasks. Insert them into any circle spot and have them return any value you want.',
-            featured: true
-        },
-        {
             name: (
                 <FormattedMessage
                     defaultMessage="Pathfinding"
@@ -2057,14 +1963,6 @@ if (IsLocal || IsLiveTests) {
             tags: ['penguinmod', 'hardware'],
             description: 'In development.',
             credits: 'Vadik1',
-            featured: true
-        },
-        {
-            name: 'Christmas',
-            extensionId: 'jgChristmas',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'all i want for christmas is yououuouououo',
             featured: true
         },
         {
