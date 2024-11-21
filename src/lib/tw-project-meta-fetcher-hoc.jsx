@@ -13,10 +13,10 @@ const LOL = 'https://editor.snail-ide.com/lol.json';
 function APIProjectToReadableProject(apiProject) {
     return {
         id: apiProject.id,
-        name: apiProject.name,
+        name: apiProject.title,
         desc: apiProject.instructions,
         notes: apiProject.notes,
-        author: { id: -1, username: apiProject.owner }
+        author: { id: apiProject.author.id, username: apiProject.author.username }
     }
 }
 

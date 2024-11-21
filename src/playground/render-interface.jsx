@@ -17,10 +17,10 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { FormattedMessage, defineMessages, injectIntl, intlShape } from 'react-intl';
-import { getIsLoading } from '../reducers/project-state.js';
+import {connect} from 'react-redux';
+import {compose} from 'redux';
+import {FormattedMessage, defineMessages, injectIntl, intlShape} from 'react-intl';
+import {getIsLoading} from '../reducers/project-state.js';
 import DOMElementRenderer from '../containers/dom-element-renderer.jsx';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
 import Comments from '../components/comments/comments.jsx';
@@ -30,7 +30,6 @@ import TWStateManagerHOC from '../lib/tw-state-manager-hoc.jsx';
 import TWThemeHOC from '../lib/tw-theme-hoc.jsx';
 import SBFileUploaderHOC from '../lib/sb-file-uploader-hoc.jsx';
 import TWPackagerIntegrationHOC from '../lib/tw-packager-integration-hoc.jsx';
-import TWRestorePointHOC from '../lib/tw-restore-point-hoc.jsx';
 import SettingsStore from '../addons/settings-store-singleton';
 import '../lib/tw-fix-history-api';
 import GUI from './render-gui.jsx';
@@ -40,22 +39,21 @@ import ProjectInput from '../components/tw-project-input/project-input.jsx';
 import FeaturedProjects from '../components/tw-featured-projects/featured-projects.jsx';
 import LikeButton from '../components/sn-likebtn/LikeButton.jsx';
 import Description from '../components/tw-description/description.jsx';
-import WebGlModal from '../containers/webgl-modal.jsx';
 import BrowserModal from '../components/browser-modal/browser-modal.jsx';
-import CloudVariableBadge from '../components/tw-cloud-variable-badge/cloud-variable-badge.jsx';
-import { isRendererSupported, isBrowserSupported } from '../lib/tw-environment-support-prober';
+import CloudVariableBadge from '../containers/tw-cloud-variable-badge.jsx';
+import {isBrowserSupported} from '../lib/tw-environment-support-prober';
 import AddonChannels from '../addons/channels';
-import { loadServiceWorker } from './load-service-worker';
+import {loadServiceWorker} from './load-service-worker';
 import runAddons from '../addons/entry';
 
 import styles from './interface.css';
 import restore from './restore.js';
 
 const urlparams = new URLSearchParams(location.search);
-const restoring = urlparams.get("restore");
-const restoreHandler = urlparams.get("handler");
-if (String(restoring) === "true") {
-    console.log(restore)
+const restoring = urlparams.get('restore');
+const restoreHandler = urlparams.get('handler');
+if (String(restoring) === 'true') {
+    // console.log(restore)
     restore(restoreHandler);
 }
 
@@ -71,11 +69,36 @@ const handleClickAddonSettings = () => {
     window.open(`${process.env.ROOT}${path}`);
 };
 
+const xmlEscape = function (unsafe) {
+    return unsafe.replace(/[<>&'"]/g, c => {
+        switch (c) {
+        case '<': return '&lt;';
+        case '>': return '&gt;';
+        case '&': return '&amp;';
+        case '\'': return '&apos;';
+        case '"': return '&quot;';
+        }
+    });
+};
+const formatProjectTitle = _title => {
+    const title = xmlEscape(String(_title));
+    const emojiRegex = /:(\w+):/g;
+    return title.replace(emojiRegex, match => {
+        const emojiName = match.replace(/:/gmi, '');
+        return `<img
+            src="https://library.penguinmod.com/files/emojis/${emojiName}.png"
+            alt=":${emojiName}:"
+            title=":${emojiName}:"
+            style="width:1.75rem;vertical-align: middle;"
+        >`;
+    });
+};
+
 const messages = defineMessages({
     defaultTitle: {
         defaultMessage: 'A mod of PenguinMod',
         description: 'Title of homepage',
-        id: 'tw.guiDefaultTitle'
+        id: 'pm.guiDefaultTitle'
     }
 });
 
@@ -98,19 +121,20 @@ if (AddonChannels.changeChannel) {
 
 runAddons();
 
-const projectDetailCache = {};
-const getProjectDetailsById = async (id) => {
-    // if we have already gotten the details of this project, avoid making another request since they likely never changed
-    if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
+/* todo: fix this and make it work properly */
+// const projectDetailCache = {};
+// const getProjectDetailsById = async (id) => {
+//     // if we have already gotten the details of this project, avoid making another request since they likely never changed
+//     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
     const response = await fetch(`https://snailshare.dreamhosters.com/api/pmWrapper/getProject?id=${id}`);
     // Don't continue if the api never returned 200-299 since we would cache an error as project details
     if (!response.ok) return {};
 
-    const project = await response.json();
-    projectDetailCache[String(id)] = project;
-    return projectDetailCache[String(id)];
-};
+//     const project = await response.json();
+//     projectDetailCache[String(id)] = project;
+//     return projectDetailCache[String(id)];
+// };
 
 const Footer = () => (
     <footer className={styles.footer}>
@@ -132,9 +156,9 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://github.com/sponsors/GarboMuffin">
+                    <a href="https://penguinmod.com/donate">
                         <FormattedMessage
-                            defaultMessage="Donate to TurboWarp Developer"
+                            defaultMessage="Donate"
                             description="Donation link in footer"
                             id="tw.footer.donate"
                         />
@@ -148,7 +172,7 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://studio.penguinmod.site/PenguinMod-Packager">
+                    <a href="https://studio.penguinmod.com/PenguinMod-Packager">
                         {/* Do not translate */}
                         {'PenguinMod Packager'}
                     </a>
@@ -248,8 +272,40 @@ const Footer = () => (
     </footer>
 );
 
+const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+const numberSuffixes = [
+    'st',
+    'nd',
+    'rd',
+    'th',
+    'th',
+    'th',
+    'th',
+    'th',
+    'th',
+    'th'
+];
+const addNumberSuffix = num => {
+    if (!num) return `${num}`;
+    if (num < 20 && num > 10) return `${num}th`;
+    return num + numberSuffixes[(num - 1) % 10];
+};
+
 class Interface extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
         this.state = {
@@ -262,24 +318,32 @@ class Interface extends React.Component {
             }
         );
     }
-    componentDidUpdate(prevProps) {
+    componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
             loadServiceWorker();
         }
     }
-    handleUpdateProjectTitle(title, isDefault) {
+    handleUpdateProjectTitle (title, isDefault) {
         if (isDefault || !title) {
             document.title = `Snail IDE - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
         } else {
             document.title = `${title} - Snail IDE`;
         }
     }
-    render() {
+    copyProjectLink (id) {
+        if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
+            navigator.clipboard.writeText(`https://editor.snail-ide.com/${id}`);
+        }
+    }
+    render () {
         const {
             /* eslint-disable no-unused-vars */
             intl,
             hasCloudVariables,
+            title,
             description,
+            extraProjectInfo,
+            remixedProjectInfo,
             isFullScreen,
             isLoading,
             isPlayerOnly,
@@ -291,6 +355,16 @@ class Interface extends React.Component {
         } = this.props;
         const isHomepage = isPlayerOnly && !isFullScreen;
         const isEditor = !isPlayerOnly;
+        const isUpdated = extraProjectInfo.isUpdated;
+        const projectReleaseYear = extraProjectInfo.releaseDate.getFullYear();
+        const projectReleaseMonth = monthNames[extraProjectInfo.releaseDate.getMonth()];
+        const projectReleaseDay = addNumberSuffix(extraProjectInfo.releaseDate.getDate());
+        const hour24 = extraProjectInfo.releaseDate.getHours();
+        const projectReleaseHour = hour24 === 0 ? 12 : (hour24 > 12 ? hour24 - 12 : hour24);
+        const projectReleaseHalf = extraProjectInfo.releaseDate.getHours() > 11
+            ? 'PM'
+            : 'AM';
+        const projectReleaseMinute = extraProjectInfo.releaseDate.getMinutes();
         return (
             <div
                 className={classNames(styles.container, {
@@ -323,6 +397,28 @@ class Interface extends React.Component {
                     }) : null}
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
+                    {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
+                        <a
+                            target="_blank"
+                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                            rel="noreferrer"
+                        >
+                            <img
+                                className={styles.projectAuthorImage}
+                                title={extraProjectInfo.author}
+                                alt={extraProjectInfo.author}
+                                src={`https://projects.penguinmod.com/api/v1/users/getpfp?username=${extraProjectInfo.author}`}
+                            />
+                        </a>
+                        <div className={styles.projectMetadata}>
+                            <h2 dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />
+                            <p>by <a
+                                target="_blank"
+                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                rel="noreferrer"
+                            >{extraProjectInfo.author}</a></p>
+                        </div>
+                    </div>}
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onClickTheme={onClickTheme}
@@ -347,29 +443,57 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             {/* project not approved message */}
-                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.accepted == false) ? (
+                            {(!extraProjectInfo.accepted) && (
                                 <div className={styles.remixWarningBox}>
                                     <p>This project is not approved. Be careful when running this project.</p>
                                 </div>
-                            ) : null}
-                            {/* project too large to remix message */}
-                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.tooLarge == true) ? (
+                            )}
+                            {/* project not approved message */}
+                            {(!extraProjectInfo.accepted) && (
                                 <div className={styles.remixWarningBox}>
-                                    <p>This project is too large to be remixed. If you would like to remix this project, please contact someone who can manually upload it for you.</p>
+                                    <p>
+                                        This project is currently under review.
+                                        Content may not be suitable for all ages,
+                                        and you should be careful when running the project.
+                                    </p>
                                 </div>
-                            ) : null}
-                            {/* its time for some absolutely BANGER react code boys */}
-                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
+                            )}
+                            {/* remix info */}
+                            {(extraProjectInfo.isRemix && remixedProjectInfo.loaded) && (
                                 <div className={styles.unsharedUpdate}>
-                                    <div style={{ display: "flex", flexDirection: "row" }}>
-                                        <a style={{ height: "32px" }} target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://snailshare.dreamhosters.com/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
-                                        <p>Thanks to <b><a target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
+                                    <div style={{display: 'flex', flexDirection: 'row'}}>
+                                        <a
+                                            style={{height: '32px'}}
+                                            target="_blank"
+                                            href={`https://www.snail-ide.com/profile?user=${remixedProjectInfo.author}`}
+                                            rel="noreferrer"
+                                        >
+                                            <img
+                                                className={styles.remixAuthorImage}
+                                                title={remixedProjectInfo.author}
+                                                alt={remixedProjectInfo.author}
+                                                src={`https://trampoline.turbowarp.org/avatars/by-username/${remixedProjectInfo.author}`}
+                                            />
+                                        </a>
+                                        <p>
+                                            Thanks to <b>
+                                                <a
+                                                    target="_blank"
+                                                    href={`https://www.snail-ide.com/profile?user=${remixedProjectInfo.author}`}
+                                                    rel="noreferrer"
+                                                >
+                                                    {remixedProjectInfo.author}
+                                                </a>
+                                            </b> for the original project <b>
+                                                <a
+                                                    href={`${window.location.origin}/#${extraProjectInfo.remixId}`}
+                                                >
+                                                    {remixedProjectInfo.name}
+                                                </a>
+                                            </b>.
+                                        </p>
                                     </div>
-                                    <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
                                 </div>
-                            ) : null}
-                            {isRendererSupported() ? null : (
-                                <WebGlModal isRtl={isRtl} />
                             )}
                             {isBrowserSupported() ? null : (
                                 <BrowserModal isRtl={isRtl} />
@@ -388,65 +512,51 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
-                            {isHomepage && window.FetchedProjectRemixes ? (
+                            {extraProjectInfo.author && (
+                                <VoteFrame
+                                    id={projectId}
+                                    darkmode={this.props.isDark}
+                                />
+                            )}
+                            {projectId !== '0' && extraProjectInfo.author && (
                                 <div>
-                                    {/* i have absolutely no interest in figuring out how the heck to get this to work properly */}
-                                    <div style={{ display: "none" }}>{window.ForceProjectRemixListUpdate}</div>
-                                    <p>Remixes of <b>{window.LastFetchedProject.name}</b></p>
-                                    <div className={styles.remixList}>
-                                        {window.FetchedProjectRemixes.map(remix => {
-                                            return <a key={remix.id} href={"#" + remix.id} style={{ textDecoration: "none", width: "115%" }}>
-                                                <div className={styles.remixProject}>
-                                                    <img style={{ height: "72px" }} src={remix.image} alt={remix.name}></img>
-                                                    <div style={{ width: "100%", display: "flex", textAlign: "left", textDecoration: "none", flexDirection: "column", alignItems: "flex-start" }}>
-                                                        <p style={{ fontSize: "1em" }}><b>{remix.name}</b></p>
-                                                        <p style={{ fontSize: "1em" }}>by <b>{remix.owner}</b></p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        })}
-                                    </div>
-                                </div>
-                            ) : null}
-                            {((window.LastFetchedProject) != null) ? (
-                                <a target="_blank" href={"https://snail-ide.com/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
-                            ) : null}
-                            <div className={styles.section}>
-                                <p>
-                                    <FormattedMessage
-                                        // eslint-disable-next-line max-len
-                                        defaultMessage="Snail IDE is a mod of Penguinmod to add new blocks and features either in extensions or in Snail IDE's main toolbox. PenguinMod is a TurboWarp mod that adds features for advanced use. Try it out by choosing an uploaded project below or making your own in the editor."
-                                        description="Description of PenguinMod and TurboWarp"
-                                        id="tw.home.description"
-                                    />
-                                </p>
-                            </div>
-                            {projectId && projectId !== '0' && (
-                                <div>
+                                    {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute < 10 ? '0' : ''}${projectReleaseMinute} ${projectReleaseHalf}`}
                                     <div className={styles.centerSector}>
+                                        <button
+                                            onClick={() => this.copyProjectLink(projectId)}
+                                            className={styles.shareLink}
+                                        >
+                                            <img
+                                                src="/share_project.png"
+                                                alt=">"
+                                            />
+                                            {'Copy Link'}
+                                        </button>
                                         <a
                                             target="_blank"
                                             rel="noreferrer"
-                                            href={`https://snail-ide.com/report?type=project&id=${projectId}`}
+                                            href={`https://www.snail-ide.com/report?type=project&id=${projectId}`}
                                             className={styles.reportLink}
                                         >
                                             <img
-                                                src="https://studio.penguinmod.com/report_flag.png"
+                                                src="report_flag.png"
                                                 alt="!"
                                             />
                                             {'Report'}
                                         </a>
                                     </div>
-                                    <div className={styles.centerSector}>
-                                    </div>
                                 </div>
                             )}
-
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a target="_blank" href="https://snail-ide.com/search?q=all:projects">View projects in new tab</a>
+                            <a
+                                target="_blank"
+                                href="https://www.snail-ide.com/search?q=all:projects"
+                                rel="noreferrer"
+                            >
+                                See more projects
+                            </a>
                         </React.Fragment>
                     ) : null}
                 </div>
@@ -467,6 +577,20 @@ Interface.propTypes = {
         credits: PropTypes.string,
         instructions: PropTypes.string
     }),
+    extraProjectInfo: PropTypes.shape({
+        accepted: PropTypes.bool,
+        isRemix: PropTypes.bool,
+        remixId: PropTypes.string,
+        tooLarge: PropTypes.bool,
+        author: PropTypes.string,
+        releaseDate: PropTypes.shape(Date),
+        isUpdated: PropTypes.bool
+    }),
+    remixedProjectInfo: PropTypes.shape({
+        loaded: PropTypes.bool,
+        name: PropTypes.string,
+        author: PropTypes.string
+    }),
     isFullScreen: PropTypes.bool,
     isLoading: PropTypes.bool,
     isPlayerOnly: PropTypes.bool,
@@ -478,7 +602,10 @@ Interface.propTypes = {
 const mapStateToProps = state => ({
     hasCloudVariables: state.scratchGui.tw.hasCloudVariables,
     customStageSize: state.scratchGui.customStageSize,
+    title: state.scratchGui.projectTitle,
     description: state.scratchGui.tw.description,
+    extraProjectInfo: state.scratchGui.tw.extraProjectInfo,
+    remixedProjectInfo: state.scratchGui.tw.remixedProjectInfo,
     isFullScreen: state.scratchGui.mode.isFullScreen,
     isLoading: getIsLoading(state.scratchGui.projectState.loadingState),
     isPlayerOnly: state.scratchGui.mode.isPlayerOnly,
@@ -499,7 +626,6 @@ const WrappedInterface = compose(
     TWProjectMetaFetcherHOC,
     TWStateManagerHOC,
     TWThemeHOC,
-    TWRestorePointHOC,
     TWPackagerIntegrationHOC
 )(ConnectedInterface);
 

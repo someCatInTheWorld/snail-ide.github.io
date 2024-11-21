@@ -15,7 +15,9 @@ import {
     activateTab,
     BLOCKS_TAB_INDEX,
     COSTUMES_TAB_INDEX,
-    SOUNDS_TAB_INDEX
+    SOUNDS_TAB_INDEX,
+    VARIABLES_TAB_INDEX,
+    FILES_TAB_INDEX
 } from '../reducers/editor-tab';
 
 import {
@@ -39,6 +41,7 @@ import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 import TWFullScreenResizerHOC from '../lib/tw-fullscreen-resizer-hoc.jsx';
 
 import GUIComponent from '../components/gui/gui.jsx';
+import HomeCommunication from './home-communication.jsx';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
 
 class GUI extends React.Component {
@@ -71,8 +74,8 @@ class GUI extends React.Component {
     }
     render () {
         if (this.props.isError) {
-            throw new Error(
-                `Error in GUI [location=${window.location}]: ${this.props.error.stack ? this.props.error.stack : this.props.error}`);
+            console.log('the below error was caught by the gui');
+            throw this.props.error;
         }
         const {
             /* eslint-disable no-unused-vars */
@@ -96,7 +99,7 @@ class GUI extends React.Component {
             isPlayground,
             ...componentProps
         } = this.props;
-        return (
+        return (<>
             <GUIComponent
                 loading={fetchingProject || isLoading || loadingStateVisible}
                 isPlayground={isPlayground}
@@ -105,7 +108,12 @@ class GUI extends React.Component {
             >
                 {children}
             </GUIComponent>
-        );
+            
+            <HomeCommunication
+                projectId={projectId}
+                isPlayground={isPlayground}
+            />
+        </>);
     }
 }
 
@@ -166,6 +174,8 @@ const mapStateToProps = state => {
         loadingStateVisible: state.scratchGui.modals.loadingProject,
         projectId: state.scratchGui.projectState.projectId,
         soundsTabVisible: state.scratchGui.editorTab.activeTabIndex === SOUNDS_TAB_INDEX,
+        variablesTabVisible: state.scratchGui.editorTab.activeTabIndex === VARIABLES_TAB_INDEX,
+        filesTabVisible: state.scratchGui.editorTab.activeTabIndex === FILES_TAB_INDEX,
         targetIsStage: (
             state.scratchGui.targets.stage &&
             state.scratchGui.targets.stage.id === state.scratchGui.targets.editingTarget
@@ -176,6 +186,7 @@ const mapStateToProps = state => {
         settingsModalVisible: state.scratchGui.modals.settingsModal,
         extensionsManagerModalVisible: state.scratchGui.modals.extensionManagerModal,
         customExtensionModalVisible: state.scratchGui.modals.customExtensionModal,
+        fontsModalVisible: state.scratchGui.modals.fontsModal,
         vm: state.scratchGui.vm
     };
 };
@@ -185,6 +196,8 @@ const mapDispatchToProps = dispatch => ({
     onActivateTab: tab => dispatch(activateTab(tab)),
     onActivateCostumesTab: () => dispatch(activateTab(COSTUMES_TAB_INDEX)),
     onActivateSoundsTab: () => dispatch(activateTab(SOUNDS_TAB_INDEX)),
+    onActivateVariablesTab: () => dispatch(activateTab(VARIABLES_TAB_INDEX)),
+    onActivateFilesTab: () => dispatch(activateTab(FILES_TAB_INDEX)),
     onRequestCloseBackdropLibrary: () => dispatch(closeBackdropLibrary()),
     onRequestCloseCostumeLibrary: () => dispatch(closeCostumeLibrary()),
     onRequestCloseTelemetryModal: () => dispatch(closeTelemetryModal())

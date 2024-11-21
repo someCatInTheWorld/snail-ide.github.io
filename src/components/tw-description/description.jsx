@@ -228,7 +228,7 @@ class Renderer {
         if (/^\d{6,}$/.test(id)) {
             return (
                 <a
-                    href={`https://editor.snail-ide.com/#${id}`}
+                    href={`https://studio.penguinmod.com/#${id}`}
                 >
                     {`#${id}`}
                 </a>
@@ -236,7 +236,7 @@ class Renderer {
         }
         return (
             <a
-                href={`https://snail-ide.com/search?q=%23${id}`}
+                href={`https://penguinmod.com/search?q=%23${id}`}
                 target="_blank"
                 rel="noreferrer"
             >
@@ -248,7 +248,7 @@ class Renderer {
     mention (name) {
         return (
             <a
-                href={`https://snail-ide.com/profile?user=${name}`}
+                href={`https://penguinmod.com/profile?user=${name}`}
                 target="_blank"
                 rel="noreferrer"
             >
@@ -260,7 +260,7 @@ class Renderer {
     emoji (name) {
         return (
             <img
-                src={`https://snail-ide-object-libraries.vercel.app/files/emojis/${name}.png`}
+                src={`https://library.penguinmod.com/files/emojis/${name}.png`}
                 alt={`:${name}:`}
                 title={`:${name}:`}
                 className={styles.emoji}

@@ -318,7 +318,7 @@ const TWStateManager = function (WrappedComponent) {
                 this.props.vm.setInterpolation(true);
             }
 
-            if (urlParams.has('username')) {
+            if (urlParams.has('username') && !this.props.usernameLoggedIn) {
                 const username = urlParams.get('username');
                 // Do not save username when loaded from URL
                 this.doNotPersistUsername = username;
@@ -336,12 +336,9 @@ const TWStateManager = function (WrappedComponent) {
                 }
             }
 
-            /*
-            add back: nohqpen
             if (urlParams.has('nohqpen')) {
                 this.props.vm.renderer.setUseHighQualityRender(false);
             }
-            */
 
             if (urlParams.has('turbo')) {
                 this.props.vm.setTurboMode(true);
@@ -363,6 +360,8 @@ const TWStateManager = function (WrappedComponent) {
 
             if (urlParams.has('livetests') || String(window.location.href).startsWith(`http://localhost:`)) {
                 // massive mega brained hack bc i cant figure out how to make a state
+                // ok so now i do know how to make it a state but because of the way
+                // this is used + pure laziness this wont be changing
                 this.props.vm.isLiveTest = true;
             }
 
@@ -391,6 +390,18 @@ const TWStateManager = function (WrappedComponent) {
             if (urlParams.has('limitless')) {
                 this.props.vm.setRuntimeOptions({
                     miscLimits: false
+                });
+            }
+            
+            if (urlParams.has('optimize')) {
+                this.props.vm.setRuntimeOptions({
+                    dangerousOptimizations: true
+                });
+            }
+            
+            if (urlParams.has('nooffscreen')) {
+                this.props.vm.setRuntimeOptions({
+                    disableOffscreenRendering: true
                 });
             }
 
@@ -472,14 +483,11 @@ const TWStateManager = function (WrappedComponent) {
                     searchParams.delete('turbo');
                 }
 
-                /*
-                add back: nohqpen
                 if (!this.props.highQualityPen) {
                     searchParams.set('nohqpen', '');
                 } else {
                     searchParams.delete('nohqpen');
                 }
-                */
 
                 /*
                 if (compilerOptions.enabled) {
@@ -513,6 +521,18 @@ const TWStateManager = function (WrappedComponent) {
                     searchParams.delete('limitless');
                 } else {
                     searchParams.set('limitless', '');
+                }
+                
+                if (runtimeOptions.dangerousOptimizations) {
+                    searchParams.set('optimize', '');
+                } else {
+                    searchParams.delete('optimize');
+                }
+                
+                if (runtimeOptions.disableOffscreenRendering) {
+                    searchParams.set('nooffscreen', '');
+                } else {
+                    searchParams.delete('nooffscreen');
                 }
 
                 setSearchParams(searchParams);
@@ -596,13 +616,16 @@ const TWStateManager = function (WrappedComponent) {
         }),
         runtimeOptions: PropTypes.shape({
             miscLimits: PropTypes.bool,
+            dangerousOptimizations: PropTypes.bool,
             fencing: PropTypes.bool,
-            maxClones: PropTypes.number
+            maxClones: PropTypes.number,
+            disableOffscreenRendering: PropTypes.bool
         }),
         highQualityPen: PropTypes.bool,
         framerate: PropTypes.number,
         interpolation: PropTypes.bool,
         turbo: PropTypes.bool,
+        usernameLoggedIn: PropTypes.bool,
         onSetIsFullScreen: PropTypes.func,
         onSetIsPlayerOnly: PropTypes.func,
         onSetProjectId: PropTypes.func,
@@ -613,6 +636,7 @@ const TWStateManager = function (WrappedComponent) {
         vm: PropTypes.instanceOf(VM)
     };
     StateManagerComponent.defaultProps = {
+        usernameLoggedIn: false,
         routingStyle: process.env.ROUTING_STYLE
     };
     const mapStateToProps = state => ({
@@ -623,6 +647,7 @@ const TWStateManager = function (WrappedComponent) {
         projectChanged: state.scratchGui.projectChanged,
         reduxProjectId: state.scratchGui.projectState.projectId,
         compilerOptions: state.scratchGui.tw.compilerOptions,
+        usernameLoggedIn: state.scratchGui.tw.usernameLoggedIn,
         runtimeOptions: state.scratchGui.tw.runtimeOptions,
         highQualityPen: state.scratchGui.tw.highQualityPen,
         framerate: state.scratchGui.tw.framerate,

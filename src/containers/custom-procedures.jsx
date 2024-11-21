@@ -38,6 +38,7 @@ class CustomProcedures extends React.Component {
         bindAll(this, [
             'handleAddLabel',
             'handleAddBoolean',
+            'handleAddCommand',
             'handleAddTextNumber',
             'handleToggleWarp',
             'handleToggleReturns',
@@ -178,6 +179,11 @@ class CustomProcedures extends React.Component {
             this.mutationRoot.addBooleanExternal();
         }
     }
+    handleAddCommand () {
+        if (this.mutationRoot) {
+            this.mutationRoot.addCommandExternal();
+        }
+    }
     handleAddTextNumber () {
         if (this.mutationRoot) {
             this.mutationRoot.addStringNumberExternal();
@@ -194,15 +200,15 @@ class CustomProcedures extends React.Component {
         if (this.mutationRoot) {
             const newReturns = !this.mutationRoot.getReturns();
             this.mutationRoot.setReturns(newReturns);
-            this.handleChangeType({target: {value: newReturns ? 'string' : 'statement'}})
+            this.handleChangeType(newReturns ? 'string' : 'statement');
             this.setState({returns: newReturns});
         }
     }
-    handleChangeType (element) {
+    handleChangeType (value) {
         if (this.mutationRoot) {
-            const newType = element.target.value
-            this.mutationRoot.setType(newType)
-            this.setState({type: newType})
+            const newType = value;
+            this.mutationRoot.setType(newType);
+            this.setState({type: newType});
         }
     }
     handleBlockColorChange (element) {
@@ -246,6 +252,7 @@ class CustomProcedures extends React.Component {
                 blockColor={this.state.blockColor}
                 returns={this.state.returns}
                 onAddBoolean={this.handleAddBoolean}
+                onAddCommand={this.handleAddCommand}
                 onAddLabel={this.handleAddLabel}
                 onAddTextNumber={this.handleAddTextNumber}
                 onCancel={this.handleCancel}

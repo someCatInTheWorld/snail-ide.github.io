@@ -185,5 +185,65 @@ export default defineMessages({
         defaultMessage: 'NCS',
         description: 'Tag for filtering a library by NCS',
         id: 'gui.libraryTags.ncs'
-    }
+    },
+    ui: {
+        defaultMessage: 'Menu',
+        description: 'Tag for filtering a library by UI/Menu',
+        id: 'gui.libraryTags.ui'
+    },
+    footsteps: {
+        defaultMessage: 'Footsteps',
+        description: 'Tag for filtering a library by footsteps',
+        id: 'gui.libraryTags.footsteps'
+    },
+    custom: {
+        defaultMessage: 'Custom',
+        description: 'Tag for filtering a library by custom. Usually this is a custom button, not an actual tag',
+        id: 'gui.libraryTags.custom'
+    },
+    customextension: {
+        defaultMessage: 'Load Custom Extension',
+        description: 'Button that loads a custom extension.',
+        id: 'gui.libraryTags.customextension'
+    },
+    hardware: {
+        defaultMessage: 'Hardware',
+        description: 'Tag for filtering a library by hardware.',
+        id: 'gui.libraryTags.hardware'
+    },
+    library: {
+        defaultMessage: 'Collections',
+        description: 'Tag for filtering a library by extension collections.',
+        id: 'gui.libraryTags.library'
+    },
+    extcreate: {
+        defaultMessage: 'Extension Creators',
+        description: 'Tag for finding all extension creator programs / website',
+        id: 'gui.libraryTags.extcreate'
+    },
+    datamgmt: {
+        defaultMessage: 'Data Management',
+        description: 'Tag for filtering a library by data management',
+        id: 'gui.libraryTags.datamgmt'
+    },
+    graphics: {
+        defaultMessage: 'Graphics',
+        description: 'Tag for filtering a library by graphics.',
+        id: 'gui.libraryTags.graphics'
+    },
+    noisemaker: {
+        defaultMessage: 'Sound',
+        description: 'Tag for filtering a library by their relation to sound.',
+        id: 'gui.libraryTags.noisemaker'
+    },
+    metal: {
+        defaultMessage: 'Metal',
+        description: 'Tag for filtering a library by metal sounds.',
+        id: 'gui.libraryTags.metal'
+    },
+    monsters: {
+        defaultMessage: 'Monsters',
+        description: 'Tag for filtering a library by monster sounds.',
+        id: 'gui.libraryTags.monster'
+    },
 });

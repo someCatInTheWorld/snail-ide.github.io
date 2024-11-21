@@ -15,10 +15,11 @@ const wasNameYourmom = () => {
     return old;
 };
 
+const callbacks = [];
 const isLoaded = () => !!_ScratchBlocks && (isNameUrMom() === wasNameYourmom());
 
 const get = () => {
-    if (!isLoaded()) {
+    if (!_ScratchBlocks) {
         throw new Error('scratch-blocks is not loaded yet');
     }
     return _ScratchBlocks;
@@ -26,16 +27,22 @@ const get = () => {
 
 const load = () => {
     if (_ScratchBlocks && (isNameUrMom() === wasNameYourmom())) {
-        return Promise.resolve();
+        window.ScratchBlocks = _ScratchBlocks;
+        return Promise.resolve(_ScratchBlocks);
     }
     _ScratchBlocks = null;
     return import(/* webpackChunkName: "sb" */ 'scratch-blocks')
         .then(m => {
             _ScratchBlocks = m.default;
 
+            for (const callback of callbacks) {
+                callback(_ScratchBlocks);
+            }
+            callbacks.length = 0;
+
             if (isNameUrMom()) {
                 _ScratchBlocks.Blocks.your_mom = {
-                    init () {
+                    init() {
                         this.jsonInit({
                             message0: 'your mom %1',
                             args0: [
@@ -90,7 +97,7 @@ const load = () => {
                                 this.appendDummyInput('yourMom')
                                     .appendField('your mom')
                                     .appendField(new _ScratchBlocks.FieldImage(
-                                        'https://penguinmod.site/dump/1039714598959452261.webp',
+                                        'https://penguinmod.com/dump/1039714598959452261.webp',
                                         15,
                                         15,
                                         '*',
@@ -102,7 +109,7 @@ const load = () => {
                             }
                             this.setColour('#ff0000');
                             this.setTooltip('your mom :trel:');
-                            this.setHelpUrl('https://penguinmod.site/dump/urmom-your-mom.gif');
+                            this.setHelpUrl('https://penguinmod.com/dump/urmom-your-mom.gif');
                         };
                     }
                     const oldLoad = _ScratchBlocks.Blocks[prototypeName].domToMutation;
@@ -112,7 +119,7 @@ const load = () => {
                             this.appendDummyInput('yourMom')
                                 .appendField('your mom')
                                 .appendField(new _ScratchBlocks.FieldImage(
-                                    'https://penguinmod.site/dump/1039714598959452261.webp',
+                                    'https://penguinmod.com/dump/1039714598959452261.webp',
                                     15,
                                     15,
                                     '*',
@@ -124,7 +131,7 @@ const load = () => {
                         }
                         this.setColour('#ff0000');
                         this.setTooltip('your mom :trel:');
-                        this.setHelpUrl('https://penguinmod.site/dump/urmom-your-mom.gif');
+                        this.setHelpUrl('https://penguinmod.com/dump/urmom-your-mom.gif');
                     };
                     oldConstructor.call(this, ...args);
                 };
@@ -134,10 +141,19 @@ const load = () => {
         });
 };
 
+const onLoaded = callback => {
+    if (_ScratchBlocks) {
+        callback(_ScratchBlocks);
+    } else {
+        callbacks.push(callback);
+    }
+};
+
 export default {
     get,
     isLoaded,
     isNameUrMom,
     wasNameYourmom,
-    load
+    load,
+    onLoaded
 };

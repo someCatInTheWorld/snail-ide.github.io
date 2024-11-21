@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import appTarget from '../app-target';
 import styles from './credits.css';
-import {getInitialDarkMode} from '../../lib/tw-theme-hoc.jsx';
+import { getInitialDarkMode } from '../../lib/tw-theme-hoc.jsx';
 
 // import fosshostLogo from './fosshost-light.png';
 import UserData from './users';
@@ -12,7 +12,7 @@ import UserData from './users';
 
 document.documentElement.lang = 'en';
 
-const User = ({image, text, href}) => (
+const User = ({ image, text, href }) => (
     <a
         href={href}
         target="_blank"
@@ -36,7 +36,7 @@ User.propTypes = {
     href: PropTypes.string
 };
 
-const UserList = ({users}) => (
+const UserList = ({ users }) => (
     <div className={styles.users}>
         {users.map((data, index) => (
             <User
@@ -109,13 +109,33 @@ const Credits = () => (
             <p>
                 <a href="https://snail-ide.com">snail-ide.com</a> is provided by <a href="https://scratch.mit.edu/users/dumorando/">dumorando</a>
             </p>
+            <p>
+                All Snail IDE costumes are downloaded or created from:
+                <ul>
+                    <li><a href="https://publicdomainvectors.org/">https://publicdomainvectors.org/</a></li>
+                    <li><a href="https://discord.gg/NZ9MBMYTZh">User-submissions from the PenguinMod Discord Server</a></li>
+                    <li>The PenguinMod Developers</li>
+                    <li>The Snail IDE Developers</li>
+                </ul>
+                All costumes exclusive to Snail IDE or PenguinMod are included under Public Domain licenses or licenses such as MIT and CC0.
+            </p>
+            <p>This is the current list of user-submitted costume creators:</p>
+            <UserList users={UserData.pmCostumeSubmittors} />
+            <p><i>The list order is randomized on each refresh.</i></p>
             <h2>Sound Effects</h2>
             <p>
-                Snail IDE has added some more sounds to the Sound Library.
-                Most Snail IDE sounds are
-                from <a href="https://freesound.org/">https://freesound.org/</a> and <a href="https://archive.org/">https://archive.org/</a> under
-                the Public Domain license. But we have also added some songs created by <a href="https://incompetech.com/">Kevin Macleod.</a>
+            All Snail IDE sounds are downloaded or created from:
+                <ul>
+                    <li><a href="https://freesound.org/">https://freesound.org/</a></li>
+                    <li><a href="https://archive.org/">https://archive.org/</a></li>
+                    <li><a href="https://discord.gg/NZ9MBMYTZh">User-submissions from the PenguinMod Discord Server</a></li>
+                    <li>The PenguinMod Developers</li>
+                </ul>
+                All sounds exclusive to Snail IDE or PenguinMod are included under Public Domain licenses or licenses such as MIT and CC0.
             </p>
+            <p>This is the current list of user-submitted sound creators:</p>
+            <UserList users={UserData.pmSoundSubmittors} />
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <h1>PenguinMod, TurboWarp and Snail IDE</h1>
@@ -143,6 +163,12 @@ const Credits = () => (
             <p>
                 Both of those credits are not listed in specific order. They are randomized on refresh.
             </p>
+            <p>
+                PenguinMod also has a few people who made and submitted extensions too! Snail IDE has inherited them from PenguinMod, because Snail IDE is based on it.
+                This list may get outdated sometimes, but here they are listed below:
+            </p>
+            <UserList users={UserData.pmExtensionDevelopers} />
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <h2>Addons</h2>
@@ -204,6 +230,13 @@ const Credits = () => (
                 More than 100 people have helped translate TurboWarp and its addons into many languages —
                 far more than we could hope to list here.
             </p>
+            <p>
+                PenguinMod is (very very slowly) getting translated into other languages, in the future
+                hopefully the same number of languages can be supported. It'll take a while until we get there though.
+            </p>
+            <p>Contributors:</p>
+            <UserList users={UserData.pmTranslators} />
+            <p><i>The list order is randomized on each refresh.</i></p>
             <p>
                 Unfortunately due to Snail IDE's small size, we have decided to mainly focus on English.
                 You can still use Snail IDE with the other languages, but they will not be updated at this time.

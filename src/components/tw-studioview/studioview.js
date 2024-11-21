@@ -11,8 +11,7 @@ import classNames from 'classnames';
 /**
  * @class
  */
-var StudioView = function (studioId) {
-    this.studioId = studioId;
+var StudioView = function () {
     this.offset = 0;
     this.ended = false;
     this.loadingPage = false;
@@ -253,7 +252,7 @@ StudioView.prototype.loadNextPage = function () {
             var p = rawProjects[i];
             projects.push({
                 id: p.id,
-                title: p.name,
+                title: p.title,
                 author: p.author.username,
                 featured: p.featured,
             });
@@ -287,7 +286,7 @@ StudioView.prototype.loadNextPage = function () {
         this.ended = true;
     }.bind(this);
 
-    var url = StudioView.STUDIO_API + "/pmWrapper/projects"
+    var url = StudioView.STUDIO_API + "/projects/getprojects"
     xhr.open('GET', url);
     xhr.send();
 };

@@ -485,12 +485,14 @@ packages:
     resolution: {integrity: sha512-xMbiLsn/8RK7Wq7VeVytytS2L6qE69bXPB10YCmMdDZbKF4okCqY74pI/jJQ/8U0b/F6NrT2+14b8/P9/3AMGA==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-class-properties@7.18.6':
     resolution: {integrity: sha512-cumfXOF0+nzZrrN8Rf0t7M+tF6sZc7vhQwYQck9q1/5w2OExlD+b4v4RpMJFaV1Z7WcDRgO6FqvxqxGlwo+RHQ==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -499,12 +501,14 @@ packages:
     resolution: {integrity: sha512-XP5G9MWNUskFuP30IfFSEFB0Z6HzLIUcjYM4bYOPHXl7eiJ9HFv8tWj6TXTN5QODiEhDZAeI4hLok2iHFFV4hw==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-static-block instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-static-block instead.
     peerDependencies:
       '@babel/core': ^7.12.0
 
   '@babel/plugin-proposal-dynamic-import@7.18.6':
     resolution: {integrity: sha512-1auuwmK+Rz13SJj36R+jqFPMJWyKEDd7lLSdOj4oJK0UTgGueSAtkrCvz9ewmgyU/P941Rv2fQwZJN8s6QruXw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-dynamic-import instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-dynamic-import instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -513,12 +517,14 @@ packages:
     resolution: {integrity: sha512-k1NtHyOMvlDDFeb9G5PhUXuGj8m/wiwojgQVEhJ/fsVsMCpLyOP4h0uGEjYJKrRI+EVPlb5Jk+Gt9P97lOGwtA==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-json-strings@7.18.6':
     resolution: {integrity: sha512-lr1peyn9kOdbYc0xr0OdHTZ5FMqS6Di+H0Fz2I/JwMzGmzJETNeOFq2pBySw6X/KFL5EWDjlJuMsUGRFb8fQgQ==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-json-strings instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-json-strings instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -527,12 +533,14 @@ packages:
     resolution: {integrity: sha512-y7C7cZgpMIjWlKE5T7eJwp+tnRYM89HmRvWM5EQuB5BoHEONjmQ8lSNmBUwOyy/GFRsohJED51YBF79hE1djug==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-nullish-coalescing-operator@7.18.6':
     resolution: {integrity: sha512-wQxQzxYeJqHcfppzBDnm1yAY0jSRkUXR2z8RePZYrKwMKgMlE8+Z6LUno+bd6LvbGh8Gltvy74+9pIYkr+XkKA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -541,12 +549,14 @@ packages:
     resolution: {integrity: sha512-ozlZFogPqoLm8WBr5Z8UckIoE4YQ5KESVcNudyXOR8uqIkliTEgJ3RoketfG6pmzLdeZF0H/wjE9/cCEitBl7Q==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-object-rest-spread@7.14.7':
     resolution: {integrity: sha512-082hsZz+sVabfmDWo1Oct1u1AgbKbUAyVgmX4otIc7bdsRgHBXwTwb3DpDmD4Eyyx6DNiuz5UAATT655k+kL5g==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -555,12 +565,14 @@ packages:
     resolution: {integrity: sha512-Q40HEhs9DJQyaZfUjjn6vE8Cv4GmMHCYuMGIWUnlxH6400VGxOuwWsPt4FxXxJkC/5eOzgn0z21M9gMT4MOhbw==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-optional-chaining@7.21.0':
     resolution: {integrity: sha512-p4zeefM72gpmEe2fkUr/OnOXpWEf8nAgk7ZYVqqfFiyIG7oFfVZcCrU64hWn5xp4tQ9LkV4bTIa5rD0KANpKNA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -569,6 +581,7 @@ packages:
     resolution: {integrity: sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -576,12 +589,14 @@ packages:
     resolution: {integrity: sha512-0QZ8qP/3RLDVBwBFoWAwCtgcDZJVwA5LUJRZU8x2YFfKNuFq161wK3cuGrALu5yiPu+vzwTAg/sMWVNeWeNyaw==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-unicode-property-regex@7.18.6':
     resolution: {integrity: sha512-2BShG/d5yoZyXZfVePH91urL5wTG6ASZU9M4o03lKK8u8UW1y08OMttBSOADTcJrnPMpvDXRG3G8fyLh4ovs8w==}
     engines: {node: '>=4'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -7776,6 +7791,7 @@ snapshots:
   '@babel/runtime@7.24.8':
     dependencies:
       regenerator-runtime: 0.14.1
+      regenerator-runtime: 0.14.1
 
   '@babel/template@7.24.7':
     dependencies:
@@ -7810,6 +7826,7 @@ snapshots:
 
   '@jest/types@24.9.0':
     dependencies:
+      '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 1.1.2
       '@types/yargs': 13.0.12
@@ -7848,6 +7865,7 @@ snapshots:
       is-glob: 4.0.3
       normalize-path: 3.0.0
       path-is-absolute: 1.0.1
+      readdirp: 2.2.1(supports-color@6.1.0)
       readdirp: 2.2.1(supports-color@6.1.0)
       upath: 1.2.0
     transitivePeerDependencies:
@@ -8002,6 +8020,8 @@ snapshots:
       babel-plugin-react-intl: 3.5.1
       download: 8.0.0
       transifex: 1.6.6
+      download: 8.0.0
+      transifex: 1.6.6
     transitivePeerDependencies:
       - supports-color
 
@@ -8130,6 +8150,7 @@ snapshots:
 
   '@typescript-eslint/experimental-utils@1.13.0(eslint@5.16.0)':
     dependencies:
+      '@types/json-schema': 7.0.15
       '@types/json-schema': 7.0.15
       '@typescript-eslint/typescript-estree': 1.13.0
       eslint: 5.16.0
@@ -8481,6 +8502,8 @@ snapshots:
     dependencies:
       object.assign: 4.1.5
       util: 0.10.4
+      object.assign: 4.1.5
+      util: 0.10.4
 
   assign-symbols@1.0.0: {}
 
@@ -8562,6 +8585,7 @@ snapshots:
       babylon: 6.18.0
       convert-source-map: 1.9.0
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       json5: 0.5.1
       lodash: 4.17.21
       minimatch: 3.1.2
@@ -8584,6 +8608,7 @@ snapshots:
       '@babel/types': 7.24.9
       eslint: 5.16.0
       eslint-visitor-keys: 1.3.0
+      resolve: 1.22.8
       resolve: 1.22.8
     transitivePeerDependencies:
       - supports-color
@@ -8644,6 +8669,8 @@ snapshots:
       '@babel/core': 7.14.8
       '@babel/helper-define-polyfill-provider': 0.2.4(@babel/core@7.14.8)
       semver: 6.3.1
+      '@babel/helper-define-polyfill-provider': 0.2.4(@babel/core@7.14.8)
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
 
@@ -8658,6 +8685,7 @@ snapshots:
   babel-plugin-polyfill-regenerator@0.2.3(@babel/core@7.14.8):
     dependencies:
       '@babel/core': 7.14.8
+      '@babel/helper-define-polyfill-provider': 0.2.4(@babel/core@7.14.8)
       '@babel/helper-define-polyfill-provider': 0.2.4(@babel/core@7.14.8)
     transitivePeerDependencies:
       - supports-color
@@ -8713,6 +8741,7 @@ snapshots:
       babel-runtime: 6.26.0
       babel-types: 6.26.0
       babylon: 6.18.0
+      debug: 2.6.9(supports-color@6.1.0)
       debug: 2.6.9(supports-color@6.1.0)
       globals: 9.18.0
       invariant: 2.2.4
@@ -8771,6 +8800,7 @@ snapshots:
   bl@1.2.3:
     dependencies:
       readable-stream: 2.3.8
+      readable-stream: 2.3.8
       safe-buffer: 5.2.1
 
   bluebird@3.7.2: {}
@@ -8782,6 +8812,8 @@ snapshots:
   body-parser@1.20.2(supports-color@6.1.0):
     dependencies:
       bytes: 3.1.2
+      content-type: 1.0.5
+      debug: 2.6.9(supports-color@6.1.0)
       content-type: 1.0.5
       debug: 2.6.9(supports-color@6.1.0)
       depd: 2.0.0
@@ -8799,6 +8831,7 @@ snapshots:
   bonjour@3.5.0:
     dependencies:
       array-flatten: 2.1.2
+      deep-equal: 1.1.2
       deep-equal: 1.1.2
       dns-equal: 1.0.0
       dns-txt: 2.0.2
@@ -8829,6 +8862,7 @@ snapshots:
       isobject: 3.0.1
       repeat-element: 1.1.4
       snapdragon: 0.8.2(supports-color@6.1.0)
+      snapdragon: 0.8.2(supports-color@6.1.0)
       snapdragon-node: 2.1.1
       split-string: 3.1.0
       to-regex: 3.0.2
@@ -8842,6 +8876,7 @@ snapshots:
   brfs@1.6.1:
     dependencies:
       quote-stream: 1.0.2
+      resolve: 1.22.8
       resolve: 1.22.8
       static-module: 2.2.5
       through2: 2.0.5
@@ -8872,6 +8907,7 @@ snapshots:
   browserify-des@1.0.2:
     dependencies:
       cipher-base: 1.0.4
+      des.js: 1.1.0
       des.js: 1.1.0
       inherits: 2.0.4
       safe-buffer: 5.2.1
@@ -8955,10 +8991,12 @@ snapshots:
       chownr: 1.1.4
       glob: 7.2.3
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       lru-cache: 4.1.5
       mississippi: 2.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-inflight: 1.0.1(bluebird@3.7.2)
       rimraf: 2.7.1
       ssri: 5.3.0
@@ -8972,11 +9010,13 @@ snapshots:
       figgy-pudding: 3.5.2
       glob: 7.2.3
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-inflight: 1.0.1(bluebird@3.7.2)
       rimraf: 2.7.1
       ssri: 6.0.2
@@ -8999,6 +9039,7 @@ snapshots:
       mkdirp: 1.0.3
       p-map: 4.0.0
       promise-inflight: 1.0.1(bluebird@3.7.2)
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       rimraf: 3.0.2
       ssri: 8.0.1
       tar: 6.2.1
@@ -9009,6 +9050,7 @@ snapshots:
   cache-base@1.0.1:
     dependencies:
       collection-visit: 1.0.0
+      component-emitter: 1.3.1
       component-emitter: 1.3.1
       get-value: 2.0.6
       has-value: 1.0.0
@@ -9103,11 +9145,16 @@ snapshots:
       domhandler: 5.0.3
       domutils: 3.1.0
       htmlparser2: 8.0.2
+      domutils: 3.1.0
+      htmlparser2: 8.0.2
       parse5: 7.1.2
       parse5-htmlparser2-tree-adapter: 7.0.0
 
   chokidar@2.1.8(supports-color@6.1.0):
     dependencies:
+      anymatch: 2.0.0(supports-color@6.1.0)
+      async-each: 1.0.6
+      braces: 2.3.2(supports-color@6.1.0)
       anymatch: 2.0.0(supports-color@6.1.0)
       async-each: 1.0.6
       braces: 2.3.2(supports-color@6.1.0)
@@ -9117,6 +9164,7 @@ snapshots:
       is-glob: 4.0.3
       normalize-path: 3.0.0
       path-is-absolute: 1.0.1
+      readdirp: 2.2.1(supports-color@6.1.0)
       readdirp: 2.2.1(supports-color@6.1.0)
       upath: 1.2.0
     optionalDependencies:
@@ -9144,6 +9192,7 @@ snapshots:
 
   chromedriver@105.0.0:
     dependencies:
+      '@testim/chrome-version': 1.1.4
       '@testim/chrome-version': 1.1.4
       axios: 0.27.2
       del: 6.1.1
@@ -9266,6 +9315,7 @@ snapshots:
       bytes: 3.0.0
       compressible: 2.0.18
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       on-headers: 1.0.2
       safe-buffer: 5.1.2
       vary: 1.1.2
@@ -9280,6 +9330,7 @@ snapshots:
     dependencies:
       buffer-from: 1.1.2
       inherits: 2.0.4
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
       typedarray: 0.0.6
 
@@ -9318,6 +9369,7 @@ snapshots:
     dependencies:
       cacache: 15.3.0
       fast-glob: 3.3.2
+      fast-glob: 3.3.2
       find-cache-dir: 3.3.2
       glob-parent: 5.1.2
       globby: 11.1.0
@@ -9325,7 +9377,9 @@ snapshots:
       normalize-path: 3.0.0
       p-limit: 3.1.0
       schema-utils: 3.3.0
+      schema-utils: 3.3.0
       serialize-javascript: 5.0.1
+      webpack: 4.46.0(webpack-cli@3.3.12)
       webpack: 4.46.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
     transitivePeerDependencies:
@@ -9387,6 +9441,7 @@ snapshots:
       nice-try: 1.0.5
       path-key: 2.0.1
       semver: 5.7.2
+      semver: 5.7.2
       shebang-command: 1.2.0
       which: 1.3.1
 
@@ -9446,6 +9501,7 @@ snapshots:
       boolbase: 1.0.0
       css-what: 6.1.0
       domhandler: 5.0.3
+      domutils: 3.1.0
       domutils: 3.1.0
       nth-check: 2.1.1
 
@@ -9726,13 +9782,16 @@ snapshots:
   define-property@0.2.5:
     dependencies:
       is-descriptor: 0.1.7
+      is-descriptor: 0.1.7
 
   define-property@1.0.0:
     dependencies:
       is-descriptor: 1.0.3
+      is-descriptor: 1.0.3
 
   define-property@2.0.2:
     dependencies:
+      is-descriptor: 1.0.3
       is-descriptor: 1.0.3
       isobject: 3.0.1
 
@@ -9749,6 +9808,7 @@ snapshots:
   del@6.1.1:
     dependencies:
       globby: 11.1.0
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       is-glob: 4.0.3
       is-path-cwd: 2.2.0
@@ -9945,6 +10005,7 @@ snapshots:
   encoding@0.1.13:
     dependencies:
       iconv-lite: 0.6.3
+    dev: true
 
   end-of-stream@1.4.4:
     dependencies:
@@ -9953,11 +10014,13 @@ snapshots:
   enhanced-resolve@0.9.1:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       memory-fs: 0.2.0
       tapable: 0.1.10
 
   enhanced-resolve@4.5.0:
     dependencies:
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       memory-fs: 0.5.0
       tapable: 1.1.3
@@ -9978,6 +10041,8 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
+      react: 16.14.0
+      react-dom: 16.14.0(react@16.14.0)
       react-is: 16.13.1
       react-test-renderer: 16.2.0(react@16.14.0)
 
@@ -9995,7 +10060,10 @@ snapshots:
   enzyme@3.10.0:
     dependencies:
       array.prototype.flat: 1.3.2
+      array.prototype.flat: 1.3.2
       cheerio: 1.0.0-rc.12
+      function.prototype.name: 1.1.6
+      has: 1.0.4
       function.prototype.name: 1.1.6
       has: 1.0.4
       html-element-map: 1.3.1
@@ -10119,6 +10187,7 @@ snapshots:
       optionator: 0.8.3
     optionalDependencies:
       source-map: 0.6.1
+    dev: true
 
   escodegen@1.9.1:
     dependencies:
@@ -10156,13 +10225,19 @@ snapshots:
     dependencies:
       array-find: 1.0.0
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       enhanced-resolve: 0.9.1
       eslint-plugin-import: 2.23.4(eslint-import-resolver-webpack@0.11.1)(eslint@5.16.0)
+      eslint-plugin-import: 2.23.4(eslint-import-resolver-webpack@0.11.1)(eslint@5.16.0)
       find-root: 1.1.0
+      has: 1.0.4
       has: 1.0.4
       interpret: 1.4.0
       lodash: 4.17.21
       node-libs-browser: 2.2.1
+      resolve: 1.22.8
+      semver: 5.7.2
+      webpack: 4.46.0(webpack-cli@3.3.12)
       resolve: 1.22.8
       semver: 5.7.2
       webpack: 4.46.0(webpack-cli@3.3.12)
@@ -10197,6 +10272,8 @@ snapshots:
       read-pkg-up: 3.0.0
       resolve: 1.22.8
       tsconfig-paths: 3.15.0
+      resolve: 1.22.8
+      tsconfig-paths: 3.15.0
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -10204,6 +10281,7 @@ snapshots:
 
   eslint-plugin-jest@22.17.0(eslint@5.16.0):
     dependencies:
+      '@typescript-eslint/experimental-utils': 1.13.0(eslint@5.16.0)
       '@typescript-eslint/experimental-utils': 1.13.0(eslint@5.16.0)
       eslint: 5.16.0
 
@@ -10213,6 +10291,8 @@ snapshots:
       array.prototype.flatmap: 1.3.2
       doctrine: 2.1.0
       eslint: 5.16.0
+      has: 1.0.4
+      jsx-ast-utils: 3.3.5
       has: 1.0.4
       jsx-ast-utils: 3.3.5
       minimatch: 3.1.2
@@ -10268,6 +10348,7 @@ snapshots:
       progress: 2.0.3
       regexpp: 2.0.1
       semver: 5.7.2
+      semver: 5.7.2
       strip-ansi: 4.0.0
       strip-json-comments: 2.0.1
       table: 5.4.6
@@ -10278,6 +10359,7 @@ snapshots:
   espree@5.0.1:
     dependencies:
       acorn: 6.4.2
+      acorn-jsx: 5.3.2(acorn@6.4.2)
       acorn-jsx: 5.3.2(acorn@6.4.2)
       eslint-visitor-keys: 1.3.0
 
@@ -10345,10 +10427,12 @@ snapshots:
   expand-brackets@2.1.4(supports-color@6.1.0):
     dependencies:
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       define-property: 0.2.5
       extend-shallow: 2.0.1
       posix-character-classes: 0.1.1
       regex-not: 1.0.2
+      snapdragon: 0.8.2(supports-color@6.1.0)
       snapdragon: 0.8.2(supports-color@6.1.0)
       to-regex: 3.0.2
     transitivePeerDependencies:
@@ -10381,10 +10465,12 @@ snapshots:
       cookie: 0.6.0
       cookie-signature: 1.0.6
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       depd: 2.0.0
       encodeurl: 1.0.2
       escape-html: 1.0.3
       etag: 1.8.1
+      finalhandler: 1.2.0(supports-color@6.1.0)
       finalhandler: 1.2.0(supports-color@6.1.0)
       fresh: 0.5.2
       http-errors: 2.0.0
@@ -10397,6 +10483,8 @@ snapshots:
       qs: 6.11.0
       range-parser: 1.2.1
       safe-buffer: 5.2.1
+      send: 0.18.0(supports-color@6.1.0)
+      serve-static: 1.15.0(supports-color@6.1.0)
       send: 0.18.0(supports-color@6.1.0)
       serve-static: 1.15.0(supports-color@6.1.0)
       setprototypeof: 1.2.0
@@ -10442,9 +10530,11 @@ snapshots:
       array-unique: 0.3.2
       define-property: 1.0.0
       expand-brackets: 2.1.4(supports-color@6.1.0)
+      expand-brackets: 2.1.4(supports-color@6.1.0)
       extend-shallow: 2.0.1
       fragment-cache: 0.2.1
       regex-not: 1.0.2
+      snapdragon: 0.8.2(supports-color@6.1.0)
       snapdragon: 0.8.2(supports-color@6.1.0)
       to-regex: 3.0.2
     transitivePeerDependencies:
@@ -10456,6 +10546,7 @@ snapshots:
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
+      '@types/yauzl': 2.10.3
       '@types/yauzl': 2.10.3
     transitivePeerDependencies:
       - supports-color
@@ -10610,6 +10701,7 @@ snapshots:
   finalhandler@1.2.0(supports-color@6.1.0):
     dependencies:
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       encodeurl: 1.0.2
       escape-html: 1.0.3
       on-finished: 2.4.1
@@ -10661,6 +10753,7 @@ snapshots:
     dependencies:
       detect-file: 1.0.0
       is-glob: 4.0.3
+      micromatch: 3.1.10(supports-color@6.1.0)
       micromatch: 3.1.10(supports-color@6.1.0)
       resolve-dir: 1.0.1
     transitivePeerDependencies:
@@ -10756,6 +10849,7 @@ snapshots:
   fs-extra@8.1.0:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       jsonfile: 4.0.0
       universalify: 0.1.2
 
@@ -10768,8 +10862,10 @@ snapshots:
   fs-write-stream-atomic@1.0.10:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       iferr: 0.1.5
       imurmurhash: 0.1.4
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
 
   fs.realpath@1.0.0: {}
@@ -11013,6 +11109,7 @@ snapshots:
   handlebars@4.7.8:
     dependencies:
       minimist: 1.2.8
+      minimist: 1.2.8
       neo-async: 2.6.2
       source-map: 0.6.1
       wordwrap: 1.0.0
@@ -11088,6 +11185,7 @@ snapshots:
     dependencies:
       inherits: 2.0.4
       readable-stream: 3.6.2
+      readable-stream: 3.6.2
       safe-buffer: 5.2.1
 
   hash.js@1.1.7:
@@ -11133,6 +11231,7 @@ snapshots:
       inherits: 2.0.4
       obuf: 1.1.2
       readable-stream: 2.3.8
+      readable-stream: 2.3.8
       wbuf: 1.7.3
 
   html-element-map@1.3.1:
@@ -11159,6 +11258,8 @@ snapshots:
   html-webpack-plugin@4.5.2(webpack@4.46.0(webpack-cli@3.3.12)):
     dependencies:
       '@types/html-minifier-terser': 5.1.2
+      '@types/tapable': 1.0.12
+      '@types/webpack': 4.41.38
       '@types/tapable': 1.0.12
       '@types/webpack': 4.41.38
       html-minifier-terser: 5.1.1
@@ -11219,6 +11320,7 @@ snapshots:
       is-glob: 4.0.3
       lodash: 4.17.21
       micromatch: 3.1.10(supports-color@6.1.0)
+      micromatch: 3.1.10(supports-color@6.1.0)
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -11235,6 +11337,7 @@ snapshots:
     dependencies:
       assert-plus: 1.0.0
       jsprim: 1.4.2
+      sshpk: 1.18.0
       sshpk: 1.18.0
 
   https-browserify@1.0.0: {}
@@ -11262,6 +11365,7 @@ snapshots:
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
+    dev: true
 
   icss-replace-symbols@1.1.0: {}
 
@@ -11482,9 +11586,13 @@ snapshots:
     dependencies:
       is-accessor-descriptor: 1.0.1
       is-data-descriptor: 1.0.1
+      is-accessor-descriptor: 1.0.1
+      is-data-descriptor: 1.0.1
 
   is-descriptor@1.0.3:
     dependencies:
+      is-accessor-descriptor: 1.0.1
+      is-data-descriptor: 1.0.1
       is-accessor-descriptor: 1.0.1
       is-data-descriptor: 1.0.1
 
@@ -11673,6 +11781,7 @@ snapshots:
       babylon: 6.18.0
       istanbul-lib-coverage: 1.2.1
       semver: 5.7.2
+      semver: 5.7.2
     transitivePeerDependencies:
       - supports-color
 
@@ -11685,6 +11794,7 @@ snapshots:
 
   istanbul-lib-source-maps@1.2.6:
     dependencies:
+      debug: 3.2.7(supports-color@6.1.0)
       debug: 3.2.7(supports-color@6.1.0)
       istanbul-lib-coverage: 1.2.1
       mkdirp: 0.5.6
@@ -11711,6 +11821,7 @@ snapshots:
       ansi-escapes: 3.2.0
       chalk: 2.4.2
       glob: 7.2.3
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       is-ci: 1.2.1
       istanbul-api: 1.3.7
@@ -11782,6 +11893,7 @@ snapshots:
     dependencies:
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       jest-docblock: 21.2.0
       micromatch: 2.3.11
       sane: 2.5.2
@@ -11793,6 +11905,7 @@ snapshots:
     dependencies:
       chalk: 2.4.2
       expect: 21.2.1
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       jest-diff: 21.2.1
       jest-matcher-utils: 21.2.1
@@ -11852,9 +11965,11 @@ snapshots:
     dependencies:
       babel-core: 6.26.3
       babel-jest: 21.2.0(babel-core@6.26.3)
+      babel-jest: 21.2.0(babel-core@6.26.3)
       babel-plugin-istanbul: 4.1.6
       chalk: 2.4.2
       convert-source-map: 1.9.0
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       jest-config: 21.2.1
       jest-haste-map: 21.2.0
@@ -11883,6 +11998,7 @@ snapshots:
     dependencies:
       callsites: 2.0.0
       chalk: 2.4.2
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       jest-message-util: 21.2.1
       jest-mock: 21.2.0
@@ -11931,6 +12047,7 @@ snapshots:
       abab: 1.0.4
       acorn: 4.0.13
       acorn-globals: 3.1.0
+      array-equal: 1.0.2
       array-equal: 1.0.2
       content-type-parser: 1.0.2
       cssom: 0.3.8
@@ -11986,11 +12103,13 @@ snapshots:
   json5@1.0.2:
     dependencies:
       minimist: 1.2.8
+      minimist: 1.2.8
 
   json5@2.2.3: {}
 
   jsonfile@4.0.0:
     optionalDependencies:
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
 
   jsonify@0.0.1: {}
@@ -12023,6 +12142,7 @@ snapshots:
     dependencies:
       lie: 3.3.0
       pako: 1.0.11
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
       setimmediate: 1.0.5
 
@@ -12076,6 +12196,7 @@ snapshots:
   load-json-file@1.1.0:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       parse-json: 2.2.0
       pify: 2.3.0
       pinkie-promise: 2.0.1
@@ -12084,12 +12205,14 @@ snapshots:
   load-json-file@2.0.0:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       parse-json: 2.2.0
       pify: 2.3.0
       strip-bom: 3.0.0
 
   load-json-file@4.0.0:
     dependencies:
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       parse-json: 4.0.0
       pify: 3.0.0
@@ -12206,9 +12329,11 @@ snapshots:
     dependencies:
       pify: 4.0.1
       semver: 5.7.2
+      semver: 5.7.2
 
   make-dir@3.1.0:
     dependencies:
+      semver: 6.3.1
       semver: 6.3.1
 
   makeerror@1.0.12:
@@ -12255,10 +12380,12 @@ snapshots:
     dependencies:
       errno: 0.1.8
       readable-stream: 2.3.8
+      readable-stream: 2.3.8
 
   memory-fs@0.5.0:
     dependencies:
       errno: 0.1.8
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
 
   merge-descriptors@1.0.1: {}
@@ -12298,14 +12425,18 @@ snapshots:
       arr-diff: 4.0.0
       array-unique: 0.3.2
       braces: 2.3.2(supports-color@6.1.0)
+      braces: 2.3.2(supports-color@6.1.0)
       define-property: 2.0.2
       extend-shallow: 3.0.2
+      extglob: 2.0.4(supports-color@6.1.0)
       extglob: 2.0.4(supports-color@6.1.0)
       fragment-cache: 0.2.1
       kind-of: 6.0.3
       nanomatch: 1.2.13(supports-color@6.1.0)
+      nanomatch: 1.2.13(supports-color@6.1.0)
       object.pick: 1.3.0
       regex-not: 1.0.2
+      snapdragon: 0.8.2(supports-color@6.1.0)
       snapdragon: 0.8.2(supports-color@6.1.0)
       to-regex: 3.0.2
     transitivePeerDependencies:
@@ -12510,6 +12641,7 @@ snapshots:
       object.pick: 1.3.0
       regex-not: 1.0.2
       snapdragon: 0.8.2(supports-color@6.1.0)
+      snapdragon: 0.8.2(supports-color@6.1.0)
       to-regex: 3.0.2
     transitivePeerDependencies:
       - supports-color
@@ -12538,6 +12670,7 @@ snapshots:
     dependencies:
       encoding: 0.1.13
       is-stream: 1.1.0
+    dev: true
 
   node-fetch@2.1.2: {}
 
@@ -12554,6 +12687,7 @@ snapshots:
   node-libs-browser@2.2.1:
     dependencies:
       assert: 1.5.1
+      assert: 1.5.1
       browserify-zlib: 0.2.0
       buffer: 4.9.2
       console-browserify: 1.2.0
@@ -12568,11 +12702,13 @@ snapshots:
       punycode: 1.4.1
       querystring-es3: 0.2.1
       readable-stream: 2.3.8
+      readable-stream: 2.3.8
       stream-browserify: 2.0.2
       stream-http: 2.8.3
       string_decoder: 1.3.0
       timers-browserify: 2.0.12
       tty-browserify: 0.0.0
+      url: 0.11.3
       url: 0.11.3
       util: 0.11.1
       vm-browserify: 1.1.2
@@ -12582,6 +12718,7 @@ snapshots:
       growly: 1.3.0
       is-wsl: 1.1.0
       semver: 5.7.2
+      semver: 5.7.2
       shellwords: 0.1.1
       which: 1.3.1
 
@@ -12590,6 +12727,8 @@ snapshots:
   normalize-package-data@2.5.0:
     dependencies:
       hosted-git-info: 2.8.9
+      resolve: 1.22.8
+      semver: 5.7.2
       resolve: 1.22.8
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
@@ -12748,6 +12887,7 @@ snapshots:
       prelude-ls: 1.1.2
       type-check: 0.3.2
       word-wrap: 1.2.5
+      word-wrap: 1.2.5
 
   os-browserify@0.3.0: {}
 
@@ -12828,7 +12968,9 @@ snapshots:
   parallel-transform@1.2.0:
     dependencies:
       cyclist: 1.0.2
+      cyclist: 1.0.2
       inherits: 2.0.4
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
 
   param-case@3.0.4:
@@ -12920,6 +13062,7 @@ snapshots:
   path-type@1.1.0:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       pify: 2.3.0
       pinkie-promise: 2.0.1
 
@@ -12988,6 +13131,7 @@ snapshots:
   portfinder@1.0.32(supports-color@6.1.0):
     dependencies:
       async: 2.6.4
+      debug: 3.2.7(supports-color@6.1.0)
       debug: 3.2.7(supports-color@6.1.0)
       mkdirp: 0.5.6
     transitivePeerDependencies:
@@ -13100,6 +13244,7 @@ snapshots:
   promise@7.3.1:
     dependencies:
       asap: 2.0.6
+    dev: true
 
   prop-types-exact@1.2.5:
     dependencies:
@@ -13191,6 +13336,7 @@ snapshots:
     dependencies:
       buffer-equal: 0.0.1
       minimist: 1.2.8
+      minimist: 1.2.8
       through2: 2.0.5
 
   raf@3.4.1:
@@ -13245,6 +13391,8 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
       scheduler: 0.19.1
+      react: 16.14.0
+      scheduler: 0.19.1
 
   react-draggable@3.0.5(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
@@ -13284,12 +13432,15 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
+      react: 16.14.0
+      react-dom: 16.14.0(react@16.14.0)
       react-lifecycles-compat: 3.0.4
       warning: 4.0.3
 
   react-popover@0.5.10:
     dependencies:
       css-vendor: 0.3.8
+      debug: 2.6.9(supports-color@6.1.0)
       debug: 2.6.9(supports-color@6.1.0)
       lodash.throttle: 3.0.4
       prop-types: 15.8.1
@@ -13304,6 +13455,7 @@ snapshots:
       lodash-es: 4.17.21
       loose-envify: 1.4.0
       prop-types: 15.8.1
+      react: 16.14.0
       react: 16.14.0
       redux: 3.7.2
 
@@ -13349,6 +13501,8 @@ snapshots:
       dom-helpers: 3.4.0
       loose-envify: 1.4.0
       prop-types: 15.8.1
+      react: 16.14.0
+      react-dom: 16.14.0(react@16.14.0)
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
       react-lifecycles-compat: 3.0.4
@@ -13433,6 +13587,9 @@ snapshots:
       graceful-fs: 4.2.11
       micromatch: 3.1.10(supports-color@6.1.0)
       readable-stream: 2.3.8
+      graceful-fs: 4.2.11
+      micromatch: 3.1.10(supports-color@6.1.0)
+      readable-stream: 2.3.8
     transitivePeerDependencies:
       - supports-color
 
@@ -13503,7 +13660,9 @@ snapshots:
   regexpu-core@5.3.2:
     dependencies:
       '@babel/regjsgen': 0.8.0
+      '@babel/regjsgen': 0.8.0
       regenerate: 1.4.2
+      regenerate-unicode-properties: 10.1.1
       regenerate-unicode-properties: 10.1.1
       regjsparser: 0.9.1
       unicode-match-property-ecmascript: 2.0.0
@@ -13676,9 +13835,12 @@ snapshots:
   sane@2.5.2:
     dependencies:
       anymatch: 2.0.0(supports-color@6.1.0)
+      anymatch: 2.0.0(supports-color@6.1.0)
       capture-exit: 1.2.0
       exec-sh: 0.2.2
       fb-watchman: 2.0.2
+      micromatch: 3.1.10(supports-color@6.1.0)
+      minimist: 1.2.8
       micromatch: 3.1.10(supports-color@6.1.0)
       minimist: 1.2.8
       walker: 1.0.8
@@ -13699,15 +13861,19 @@ snapshots:
     dependencies:
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
+      ajv-keywords: 3.5.2(ajv@6.12.6)
 
   schema-utils@1.0.0:
     dependencies:
       ajv: 6.12.6
       ajv-errors: 1.0.1(ajv@6.12.6)
       ajv-keywords: 3.5.2(ajv@6.12.6)
+      ajv-errors: 1.0.1(ajv@6.12.6)
+      ajv-keywords: 3.5.2(ajv@6.12.6)
 
   schema-utils@2.7.1:
     dependencies:
+      '@types/json-schema': 7.0.15
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
@@ -13715,7 +13881,9 @@ snapshots:
   schema-utils@3.3.0:
     dependencies:
       '@types/json-schema': 7.0.15
+      '@types/json-schema': 7.0.15
       ajv: 6.12.6
+      ajv-keywords: 3.5.2(ajv@6.12.6)
       ajv-keywords: 3.5.2(ajv@6.12.6)
 
   scratch-audio@https://codeload.github.com/PenguinMod/PenguinMod-Audio/tar.gz/0a3f4d98866e5d92fd459d94e5d5c8490de0e66f:
@@ -13871,6 +14039,7 @@ snapshots:
   send@0.18.0(supports-color@6.1.0):
     dependencies:
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       depd: 2.0.0
       destroy: 1.2.0
       encodeurl: 1.0.2
@@ -13901,6 +14070,7 @@ snapshots:
       accepts: 1.3.8
       batch: 0.6.1
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       escape-html: 1.0.3
       http-errors: 1.6.3
       mime-types: 2.1.35
@@ -13913,6 +14083,7 @@ snapshots:
       encodeurl: 1.0.2
       escape-html: 1.0.3
       parseurl: 1.3.3
+      send: 0.18.0(supports-color@6.1.0)
       send: 0.18.0(supports-color@6.1.0)
     transitivePeerDependencies:
       - supports-color
@@ -14034,6 +14205,7 @@ snapshots:
     dependencies:
       base: 0.11.2
       debug: 2.6.9(supports-color@6.1.0)
+      debug: 2.6.9(supports-color@6.1.0)
       define-property: 0.2.5
       extend-shallow: 2.0.1
       map-cache: 0.2.2
@@ -14119,6 +14291,7 @@ snapshots:
       hpack.js: 2.1.6
       obuf: 1.1.2
       readable-stream: 3.6.2
+      readable-stream: 3.6.2
       wbuf: 1.7.3
     transitivePeerDependencies:
       - supports-color
@@ -14129,6 +14302,7 @@ snapshots:
       handle-thing: 2.0.1
       http-deceiver: 1.2.7
       select-hose: 2.0.0
+      spdy-transport: 3.0.0(supports-color@6.1.0)
       spdy-transport: 3.0.0(supports-color@6.1.0)
     transitivePeerDependencies:
       - supports-color
@@ -14188,12 +14362,15 @@ snapshots:
       escodegen: 1.9.1
       falafel: 2.2.5
       has: 1.0.4
+      has: 1.0.4
       magic-string: 0.22.5
       merge-source-map: 1.0.4
       object-inspect: 1.4.1
       quote-stream: 1.0.2
       readable-stream: 2.3.8
+      readable-stream: 2.3.8
       shallow-copy: 0.0.1
+      static-eval: 2.1.1
       static-eval: 2.1.1
       through2: 2.0.5
 
@@ -14205,6 +14382,7 @@ snapshots:
     dependencies:
       inherits: 2.0.4
       readable-stream: 2.3.8
+      readable-stream: 2.3.8
 
   stream-each@1.2.3:
     dependencies:
@@ -14215,6 +14393,7 @@ snapshots:
     dependencies:
       builtin-status-codes: 3.0.0
       inherits: 2.0.4
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
       to-arraybuffer: 1.0.1
       xtend: 4.0.2
@@ -14396,7 +14575,9 @@ snapshots:
       chownr: 2.0.0
       fs-minipass: 2.1.0
       minipass: 5.0.0
+      minipass: 5.0.0
       minizlib: 2.1.2
+      mkdirp: 1.0.3
       mkdirp: 1.0.3
       yallist: 4.0.0
 
@@ -14416,6 +14597,7 @@ snapshots:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.1
+      webpack: 4.46.0(webpack-cli@3.3.12)
       webpack: 4.46.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
@@ -14457,6 +14639,7 @@ snapshots:
 
   through2@2.0.5:
     dependencies:
+      readable-stream: 2.3.8
       readable-stream: 2.3.8
       xtend: 4.0.2
 
@@ -14554,6 +14737,7 @@ snapshots:
       '@types/json5': 0.0.29
       json5: 1.0.2
       minimist: 1.2.8
+      minimist: 1.2.8
       strip-bom: 3.0.0
 
   tslib@1.14.1: {}
@@ -14635,6 +14819,7 @@ snapshots:
       serialize-javascript: 1.9.1
       source-map: 0.6.1
       uglify-es: 3.3.9
+      webpack: 4.46.0(webpack-cli@3.3.12)
       webpack: 4.46.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
@@ -14744,6 +14929,7 @@ snapshots:
   util@0.10.4:
     dependencies:
       inherits: 2.0.3
+      inherits: 2.0.3
 
   util@0.11.1:
     dependencies:
@@ -14761,6 +14947,7 @@ snapshots:
 
   validate-npm-package-license@3.0.4:
     dependencies:
+      spdx-correct: 3.2.0
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
@@ -15152,12 +15339,14 @@ snapshots:
   watchpack-chokidar2@2.0.1:
     dependencies:
       chokidar: 2.1.8(supports-color@6.1.0)
+      chokidar: 2.1.8(supports-color@6.1.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
 
   watchpack@1.7.5:
     dependencies:
+      graceful-fs: 4.2.11
       graceful-fs: 4.2.11
       neo-async: 2.6.2
     optionalDependencies:
@@ -15184,11 +15373,14 @@ snapshots:
       cross-spawn: 6.0.5
       enhanced-resolve: 4.5.0
       findup-sync: 3.0.0(supports-color@6.1.0)
+      findup-sync: 3.0.0(supports-color@6.1.0)
       global-modules: 2.0.0
       import-local: 2.0.0
       interpret: 1.4.0
       loader-utils: 1.4.2
       supports-color: 6.1.0
+      v8-compile-cache: 2.4.0
+      webpack: 4.46.0(webpack-cli@3.3.12)
       v8-compile-cache: 2.4.0
       webpack: 4.46.0(webpack-cli@3.3.12)
       yargs: 13.3.2
@@ -15200,12 +15392,15 @@ snapshots:
       mkdirp: 0.5.6
       range-parser: 1.2.1
       webpack: 4.46.0(webpack-cli@3.3.12)
+      webpack: 4.46.0(webpack-cli@3.3.12)
       webpack-log: 2.0.0
 
   webpack-dev-server@3.11.2(webpack-cli@3.3.12(webpack@4.46.0))(webpack@4.46.0(webpack-cli@3.3.12)):
     dependencies:
       ansi-html: 0.0.7
       bonjour: 3.5.0
+      chokidar: 2.1.8(supports-color@6.1.0)
+      compression: 1.7.4(supports-color@6.1.0)
       chokidar: 2.1.8(supports-color@6.1.0)
       compression: 1.7.4(supports-color@6.1.0)
       connect-history-api-fallback: 1.6.0
@@ -15223,11 +15418,16 @@ snapshots:
       opn: 5.5.0
       p-retry: 3.0.1
       portfinder: 1.0.32(supports-color@6.1.0)
+      portfinder: 1.0.32(supports-color@6.1.0)
       schema-utils: 1.0.0
       selfsigned: 1.10.14
       semver: 6.3.1
       serve-index: 1.9.1(supports-color@6.1.0)
+      semver: 6.3.1
+      serve-index: 1.9.1(supports-color@6.1.0)
       sockjs: 0.3.24
+      sockjs-client: 1.6.1(supports-color@6.1.0)
+      spdy: 4.0.2(supports-color@6.1.0)
       sockjs-client: 1.6.1(supports-color@6.1.0)
       spdy: 4.0.2(supports-color@6.1.0)
       strip-ansi: 3.0.1
@@ -15272,6 +15472,7 @@ snapshots:
       loader-runner: 2.4.0
       loader-utils: 1.4.2
       memory-fs: 0.4.1
+      micromatch: 3.1.10(supports-color@6.1.0)
       micromatch: 3.1.10(supports-color@6.1.0)
       mkdirp: 0.5.6
       neo-async: 2.6.2
@@ -15380,6 +15581,7 @@ snapshots:
   write-file-atomic@2.4.3:
     dependencies:
       graceful-fs: 4.2.11
+      graceful-fs: 4.2.11
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
 
@@ -15445,6 +15647,7 @@ snapshots:
       set-blocking: 2.0.0
       string-width: 3.1.0
       which-module: 2.0.1
+      which-module: 2.0.1
       y18n: 4.0.3
       yargs-parser: 13.1.2
 
@@ -15484,6 +15687,7 @@ snapshots:
       require-main-filename: 1.0.1
       set-blocking: 2.0.0
       string-width: 2.1.1
+      which-module: 2.0.1
       which-module: 2.0.1
       y18n: 3.2.2
       yargs-parser: 7.0.0

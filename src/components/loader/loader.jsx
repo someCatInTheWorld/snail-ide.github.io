@@ -10,6 +10,7 @@ import { tip } from '../../lib/randomUnhelpfulTip';
 import snail from './snail.svg'
 
 import * as progressMonitor from './tw-progress-monitor';
+import isScratchDesktop from '../../lib/isScratchDesktop';
 
 // tw:
 // we make some rather large changes here:
@@ -81,7 +82,9 @@ class LoaderComponent extends React.Component {
         ]);
     }
     componentDidMount () {
-        progressMonitor.setProgressHandler(this.handleProgressChange);
+        if (!isScratchDesktop()) {
+            progressMonitor.setProgressHandler(this.handleProgressChange);
+        }
         this.updateMessage();
     }
     componentDidUpdate () {
@@ -101,7 +104,9 @@ class LoaderComponent extends React.Component {
         this.update();
     }
     update () {
-        this.barInner.style.width = `${this.progress * 100}%`;
+        if (this.barInner) {
+            this.barInner.style.width = `${this.progress * 100}%`;
+        }
         if (this._state === 2) {
             this.updateMessage();
         }
@@ -147,13 +152,14 @@ class LoaderComponent extends React.Component {
                             ref={this.messageRef}
                         />
                     </div>
-                    <div className={styles.twProgressOuter}>
-                        <div
-                            className={styles.twProgressInner}
-                            ref={this.barInnerRef}
-                        />
-                    </div>
-
+                    {!isScratchDesktop() && (
+                        <div className={styles.twProgressOuter}>
+                            <div
+                                className={styles.twProgressInner}
+                                ref={this.barInnerRef}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
         );

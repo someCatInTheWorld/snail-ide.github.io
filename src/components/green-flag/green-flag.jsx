@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 
-import greenFlagIcon from './icon--green-flag.svg';
+import greenFlagIcon from '../stage-header/stagecontrols/flag.svg';
 import turboFlagIcon from './icon--turbo.svg';
 import styles from './green-flag.css';
 

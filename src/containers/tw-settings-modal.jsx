@@ -31,7 +31,9 @@ class UsernameModal extends React.Component {
             'handleStageHeightChange',
             'handleStagePresetUsed',
             'handleDisableCompilerChange',
-            'handleStoreProjectOptions'
+            'handleStoreProjectOptions',
+            'handleEnableDangerousOptimizationsChange',
+            'handleDisableOffscreenRenderingChange'
         ]);
     }
     handleFramerateChange (e) {
@@ -67,6 +69,16 @@ class UsernameModal extends React.Component {
             miscLimits: !e.target.checked
         });
     }
+    handleEnableDangerousOptimizationsChange (e) {
+        this.props.vm.setRuntimeOptions({
+            dangerousOptimizations: e.target.checked
+        });
+    }
+    handleDisableOffscreenRenderingChange (e) {
+        this.props.vm.setRuntimeOptions({
+            disableOffscreenRendering: e.target.checked
+        });
+    }
     handleWarpTimerChange (e) {
         this.props.vm.setCompilerOptions({
             warpTimer: e.target.checked
@@ -84,11 +96,17 @@ class UsernameModal extends React.Component {
         this.props.vm.setStageSize(this.props.customStageSize.width, value);
     }
     handleStagePresetUsed (widescreen) {
-        if (widescreen) {
+        switch (widescreen) {
+        case 1:
             this.props.vm.setStageSize(640, 360);
-            return;
+            break;
+        case 2:
+            this.props.vm.setStageSize(360, 360);
+            break;
+        default:
+            this.props.vm.setStageSize(480, 360);
+            break;
         }
-        this.props.vm.setStageSize(480, 360);
     }
     handleStoreProjectOptions () {
         this.props.vm.storeProjectOptions();
@@ -111,6 +129,8 @@ class UsernameModal extends React.Component {
                 onInfiniteClonesChange={this.handleInfiniteClonesChange}
                 onRemoveFencingChange={this.handleRemoveFencingChange}
                 onRemoveLimitsChange={this.handleRemoveLimitsChange}
+                onEnableDangerousOptimizationsChange={this.handleEnableDangerousOptimizationsChange}
+                onDisableOffscreenRenderingChange={this.handleDisableOffscreenRenderingChange}
                 onWarpTimerChange={this.handleWarpTimerChange}
                 onStageWidthChange={this.handleStageWidthChange}
                 onStageHeightChange={this.handleStageHeightChange}
@@ -150,6 +170,7 @@ UsernameModal.propTypes = {
     infiniteClones: PropTypes.bool,
     removeFencing: PropTypes.bool,
     removeLimits: PropTypes.bool,
+    dangerousOptimizations: PropTypes.bool,
     warpTimer: PropTypes.bool,
     customStageSize: PropTypes.shape({
         width: PropTypes.number,
@@ -167,6 +188,8 @@ const mapStateToProps = state => ({
     infiniteClones: state.scratchGui.tw.runtimeOptions.maxClones === Infinity,
     removeFencing: !state.scratchGui.tw.runtimeOptions.fencing,
     removeLimits: !state.scratchGui.tw.runtimeOptions.miscLimits,
+    disableOffscreenRendering: state.scratchGui.tw.runtimeOptions.disableOffscreenRendering,
+    dangerousOptimizations: state.scratchGui.tw.runtimeOptions.dangerousOptimizations,
     warpTimer: state.scratchGui.tw.compilerOptions.warpTimer,
     customStageSize: state.scratchGui.customStageSize,
     disableCompiler: !state.scratchGui.tw.compilerOptions.enabled

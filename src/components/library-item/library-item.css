@@ -26,6 +26,37 @@
     background: $ui-primary;
 }
 
+.library-item-sound {
+    width: 200px;
+    max-width: 200px;
+    flex-basis: 200px;
+    height: 100px;
+    padding: 0.25rem;
+    padding-bottom: 0;
+}
+.library-item-sound.library-item-new {
+    /*
+        we have to use hue-rotate,
+        since the waveforms have their color baked in by design
+        & the play button styling would be annoying
+    */
+    filter: hue-rotate(60deg);
+}
+.library-item-new-badge {
+    border-radius: 1024px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #EB6566;
+    padding: 1px 5px;
+    position: absolute;
+    left: -8px;
+    top: -8px;
+}
+.library-item-sound .library-item-new-badge {
+    background-color: $sound-primary;
+}
+
 .library-item-extension {
     align-self: stretch;
 }
@@ -33,6 +64,108 @@
 .library-item:hover {
     border-width: 2px;
     border-color: $motion-primary;
+}
+.library-item-sound:hover {
+    border-color: $sound-primary;
+}
+.library-item-new:hover {
+    border-color: #EB6566;
+}
+.library-item-new.library-item-sound:hover {
+    border-color: $sound-primary;
+}
+
+.library-item-favorite {
+    background: transparent;
+    position: absolute;
+    top: calc(11.5rem + 4px);
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.library-item-favorite img {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.library-item-favorite > img[data-usedimage="false"] {
+    opacity: 0;
+}
+
+.library-item-delete {
+    background: transparent;
+    position: absolute;
+    top: calc(11.5rem + 4px);
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.library-item-delete img {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* delete button */
+.library-item-delete > img {
+    filter: brightness(0);
+    opacity: 0.25;
+}
+[theme="dark"] .library-item-delete>img {
+    filter: saturate(0) brightness(255);
+}
+.library-item-delete:hover > img {
+    filter: brightness(1);
+    opacity: 1;
+}
+.library-item-delete:active > img {
+    filter: brightness(0.25);
+    opacity: 1;
+}
+
+/* unfavorited items */
+.library-item-favorite[data-activated="false"] > img[data-usedimage="true"] {
+    filter: brightness(0);
+    opacity: 0.25;
+}
+[theme="dark"] .library-item-favorite[data-activated="false"]>img[data-usedimage="true"] {
+    filter: saturate(0) brightness(255);
+}
+.library-item-favorite[data-activated="false"]:hover > img[data-usedimage="true"] {
+    filter: brightness(1);
+    opacity: 1;
+}
+.library-item-favorite[data-activated="false"]:active > img[data-usedimage="true"] {
+    filter: brightness(1);
+    opacity: 1;
+}
+.library-item-favorite[data-activated="false"]:active > img[data-usedimage="false"] {
+    filter: brightness(1);
+    opacity: 1;
+}
+
+/* favorited items */
+.library-item-favorite[data-activated="true"] > img[data-usedimage="true"] {
+    filter: none;
+    opacity: 1;
 }
 
 .hidden {
@@ -46,6 +179,27 @@
 
 .disabled:hover {
     border-color: $ui-black-transparent;
+}
+
+.inspect-extension {
+    position: relative;
+    background: #00c3ff;
+    color: white;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 4px;
+    border: 0;
+    border-radius: 4px;
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+.inspect-extension > img {
+    width: 20px;
+    height: 20px;
+}
+.small-bottom-margin {
+    margin-bottom: 4px;
 }
 
 .library-item-image-container-wrapper {
@@ -109,13 +263,32 @@
     max-width: 100%;
     max-height: 100%;
 }
+.library-item-image-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.library-item-waveform {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 3rem);
+    height: 3rem;
+    max-width: 100%;
+    max-height: 100%;
+}
+[dir="rtl"] .library-item-waveform {
+    left: initial;
+    right: 0;
+}
 
 .library-item-inset-image {
     width: 2.5rem;
 }
 
 .library-item-name {
-    width: 80%;
+    width: 100%;
     margin: 0.25rem 0;
     text-align: center;
 
@@ -125,8 +298,31 @@
     */
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: pre-wrap;
     min-width: 0;
+}
+.library-item-sound-name {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.library-item-sound-type {
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
+    opacity: 0.65;
+}
+
+[dir="rtl"] .library-item-sound-name,
+[dir="rtl"] .library-item-sound-type {
+    text-align: right;
+}
+
+.library-item-sound-info-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .featured-item {
@@ -139,6 +335,7 @@
 
 .featured-image-container {
     position: relative;
+    width: 100%;
 }
 
 .featured-image {
@@ -209,8 +406,24 @@
     font-weight: bold;
 }
 
-.featured-extension-metadata-detail img{
+.featured-extension-metadata-detail img {
     margin-right: 0.25rem;
+    width: 20px;
+    height: 20px;
+}
+
+.extension-links {
+    width: 300px;
+    padding: 0 1.25rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0.75;
+    text-align: left;
+}
+.extension-links a {
+    color: inherit !important;
+    text-decoration: underline;
 }
 
 .coming-soon-text {
@@ -232,8 +445,21 @@
     transform: translate(calc(-2 * $space), calc(2 * $space));
 }
 
-.incompatible-with-scratch {
-    padding: 0 1.25rem 1rem 1.25rem;
-    width: 100%;
-    text-align: left;
+.favorite-container {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+.favorite-icon {
+    width: 32px;
+    height: 32px;
+}
+.favorite-container.active,
+.library-item:hover .favorite-container {
+    display: block;
 }

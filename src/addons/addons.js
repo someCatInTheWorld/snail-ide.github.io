@@ -7,7 +7,6 @@ const addons = [
     'middle-click-popup',
     'jump-to-def',
     'editor-searchable-dropdowns',
-    'data-category-tweaks-v2',
     'block-palette-icons',
     'hide-flyout',
     'mediarecorder',
@@ -68,9 +67,7 @@ const addons = [
     'tw-straighten-comments',
     'tw-remove-backpack',
     'tw-remove-feedback',
-    'tw-disable-cloud-variables',
-    'tw-disable-restore-points',
-    'editor-stepping'
+    'tw-disable-cloud-variables'
 ];
 
 const newAddons = [
@@ -78,7 +75,8 @@ const newAddons = [
     'number-pad',
     'rename-broadcasts',
     'sprite-properties',
-    'paint-snap'
+    'paint-snap',
+    "editor-block-chomping",
 ];
 
 // eslint-disable-next-line import/no-commonjs
