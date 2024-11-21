@@ -169,7 +169,7 @@ export default defineMessages({
     categoryhardware: {
         defaultMessage: 'Hardware',
         description: 'Tag for filtering a library by categoryhardware',
-        id: 'gui.libraryTags.hardware'
+        id: 'gui.libraryTags.catergoryhardware'
     },
     other_mods: {
         defaultMessage: 'Other Mods',

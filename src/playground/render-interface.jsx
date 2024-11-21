@@ -121,20 +121,19 @@ if (AddonChannels.changeChannel) {
 
 runAddons();
 
-/* todo: fix this and make it work properly */
-// const projectDetailCache = {};
-// const getProjectDetailsById = async (id) => {
-//     // if we have already gotten the details of this project, avoid making another request since they likely never changed
-//     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
+const projectDetailCache = {};
+const getProjectDetailsById = async (id) => {
+    // if we have already gotten the details of this project, avoid making another request since they likely never changed
+    if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
     const response = await fetch(`https://snailshare.dreamhosters.com/api/pmWrapper/getProject?id=${id}`);
     // Don't continue if the api never returned 200-299 since we would cache an error as project details
     if (!response.ok) return {};
 
-//     const project = await response.json();
-//     projectDetailCache[String(id)] = project;
-//     return projectDetailCache[String(id)];
-// };
+    const project = await response.json();
+    projectDetailCache[String(id)] = project;
+    return projectDetailCache[String(id)];
+};
 
 const Footer = () => (
     <footer className={styles.footer}>
@@ -356,15 +355,15 @@ class Interface extends React.Component {
         const isHomepage = isPlayerOnly && !isFullScreen;
         const isEditor = !isPlayerOnly;
         const isUpdated = extraProjectInfo.isUpdated;
-        const projectReleaseYear = extraProjectInfo.releaseDate.getFullYear();
-        const projectReleaseMonth = monthNames[extraProjectInfo.releaseDate.getMonth()];
-        const projectReleaseDay = addNumberSuffix(extraProjectInfo.releaseDate.getDate());
-        const hour24 = extraProjectInfo.releaseDate.getHours();
+        const projectReleaseYear = extraProjectInfo.releaseDate?.getFullYear();
+        const projectReleaseMonth = monthNames[extraProjectInfo.releaseDate?.getMonth()];
+        const projectReleaseDay = addNumberSuffix(extraProjectInfo.releaseDate?.getDate());
+        const hour24 = extraProjectInfo.releaseDate?.getHours();
         const projectReleaseHour = hour24 === 0 ? 12 : (hour24 > 12 ? hour24 - 12 : hour24);
-        const projectReleaseHalf = extraProjectInfo.releaseDate.getHours() > 11
+        const projectReleaseHalf = extraProjectInfo.releaseDate?.getHours() > 11
             ? 'PM'
             : 'AM';
-        const projectReleaseMinute = extraProjectInfo.releaseDate.getMinutes();
+        const projectReleaseMinute = extraProjectInfo.releaseDate?.getMinutes();
         return (
             <div
                 className={classNames(styles.container, {
@@ -400,21 +399,21 @@ class Interface extends React.Component {
                     {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
                         <a
                             target="_blank"
-                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                            href={`https://www.snail-ide.com/profile?user=${extraProjectInfo.author}`}
                             rel="noreferrer"
                         >
                             <img
                                 className={styles.projectAuthorImage}
                                 title={extraProjectInfo.author}
                                 alt={extraProjectInfo.author}
-                                src={`https://projects.penguinmod.com/api/v1/users/getpfp?username=${extraProjectInfo.author}`}
+                                src={`https://trampoline.turbowarp.org/avatars/by-username/$${extraProjectInfo.author}`}
                             />
                         </a>
                         <div className={styles.projectMetadata}>
                             <h2 dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />
                             <p>by <a
                                 target="_blank"
-                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                href={`https://www.snail-ide.com/profile?user=${extraProjectInfo.author}`}
                                 rel="noreferrer"
                             >{extraProjectInfo.author}</a></p>
                         </div>

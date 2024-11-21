@@ -68,6 +68,9 @@ const closeModal = function (modal) {
         modal: modal
     };
 };
+const openExtManagerModal = () => {
+    return openModal(MODAL_EXTS);
+}
 const openBackdropLibrary = function () {
     return openModal(MODAL_BACKDROP_LIBRARY);
 };

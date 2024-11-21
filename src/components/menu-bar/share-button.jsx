@@ -1,15 +1,11 @@
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { connect } from 'react-redux';
-import { FormattedMessage, injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
 import bindAll from 'lodash.bindall';
-import bindAll from 'lodash.bindall';
 import Button from '../button/button.jsx';
 
-import loadingIcon from './share-loading.svg';
 import loadingIcon from './share-loading.svg';
 import styles from './share-button.css';
 
@@ -75,10 +71,6 @@ class ShareButton extends React.Component {
             return;
         }
 
-        const packagerData = e.data.p4;
-        if (packagerData.type !== 'validate') {
-            return;
-        }
         const packagerData = e.data.p4;
         if (packagerData.type !== 'validate') {
             return;
@@ -219,10 +211,6 @@ const mapStateToProps = state => ({
 // eslint-disable-next-line no-unused-vars
 const mapDispatchToProps = dispatch => ({});
 
-export default injectIntl(connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ShareButton));
 export default injectIntl(connect(
     mapStateToProps,
     mapDispatchToProps

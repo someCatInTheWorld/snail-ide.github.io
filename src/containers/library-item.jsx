@@ -246,10 +246,7 @@ LibraryItem.propTypes = {
     extensionId: PropTypes.string,
     href: PropTypes.string,
     featured: PropTypes.bool,
-<<<<<<< HEAD
-=======
     isNew: PropTypes.bool,
->>>>>>> pm/develop
     hidden: PropTypes.bool,
     iconMd5: PropTypes.string,
     iconRawURL: PropTypes.string,
