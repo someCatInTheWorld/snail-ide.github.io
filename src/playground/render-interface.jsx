@@ -16,7 +16,7 @@
 
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { FormattedMessage, defineMessages, injectIntl, intlShape } from 'react-intl';
@@ -103,7 +103,7 @@ const getProjectDetailsById = async (id) => {
     // if we have already gotten the details of this project, avoid making another request since they likely never changed
     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
-    const response = await fetch(`https://snailshare.xyz/api/pmWrapper/getProject?id=${id}`);
+    const response = await fetch(`https://snailshare.dreamhosters.com/api/pmWrapper/getProject?id=${id}`);
     // Don't continue if the api never returned 200-299 since we would cache an error as project details
     if (!response.ok) return {};
 
@@ -252,6 +252,15 @@ class Interface extends React.Component {
     constructor(props) {
         super(props);
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
+        this.state = {
+            loginData: {}
+        }
+        window.addEventListener('message', (event) => {
+            if (event.origin !== 'https://www.snail-ide.com') return;
+               this.setState({ loginData: event.data });
+               console.log(event.data);
+            }
+        );
     }
     componentDidUpdate(prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
@@ -289,6 +298,11 @@ class Interface extends React.Component {
                     [styles.editor]: isEditor
                 })}
             >
+                <iframe
+                    id='login'
+                    style={{ display: 'none' }}
+                    src={`https://www.snail-ide.com/embed/editor?external=${window.location}`}
+                ></iframe>
                 {isHomepage ? (
                     <div className={styles.menu}>
                         <WrappedMenuBar
@@ -297,6 +311,7 @@ class Interface extends React.Component {
                             enableSeeInside
                             onClickAddonSettings={handleClickAddonSettings}
                             onClickTheme={onClickTheme}
+                            username={this.state.loginData.packet?.username}
                         />
                     </div>
                 ) : null}
@@ -314,16 +329,21 @@ class Interface extends React.Component {
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
                         backpackVisible
                         backpackHost="_local_"
+                        username={this.state.loginData.packet?.username}
                         {...props}
                     />
                     {isHomepage ? (
                         <React.Fragment>
                             {projectId && projectId !== '0' ? (
                                 <div className={styles.remixWarningBox}>
-                                    <p>This program is free software: you can redistribute it and/or modify
-                                        it under the terms of the GNU General Public License as published by
-                                        the Free Software Foundation, either version 3 of the License, or
-                                        (at your option) any later version.</p>
+                                    <p>
+                                        <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+                                            This program is free software: you can redistribute it and/or modify
+                                            it under the terms of the GNU General Public License as published by
+                                            the Free Software Foundation, either version 3 of the License, or
+                                            (at your option) any later version.
+                                        </a>
+                                    </p>
                                 </div>
                             ) : null}
                             {/* project not approved message */}
@@ -342,7 +362,7 @@ class Interface extends React.Component {
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
                                 <div className={styles.unsharedUpdate}>
                                     <div style={{ display: "flex", flexDirection: "row" }}>
-                                        <a style={{ height: "32px" }} target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://snailshare.xyz/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
+                                        <a style={{ height: "32px" }} target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://snailshare.dreamhosters.com/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
                                         <p>Thanks to <b><a target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
                                     </div>
                                     <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
@@ -396,7 +416,7 @@ class Interface extends React.Component {
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
-                                        defaultMessage="Snail IDE is a mod of Penguinmod to add new blocks and features either in extensions or in Snail IDE's main toolbox. PenguinMod is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by choosing an uploaded project below or making your own in the editor."
+                                        defaultMessage="Snail IDE is a mod of Penguinmod to add new blocks and features either in extensions or in Snail IDE's main toolbox. PenguinMod is a TurboWarp mod that adds features for advanced use. Try it out by choosing an uploaded project below or making your own in the editor."
                                         description="Description of PenguinMod and TurboWarp"
                                         id="tw.home.description"
                                     />

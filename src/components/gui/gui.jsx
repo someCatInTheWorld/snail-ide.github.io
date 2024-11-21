@@ -147,6 +147,7 @@ const GUIComponent = props => {
         extensionsManagerModalVisible,
         customExtensionModalVisible,
         isPlayground,
+        username,
         vm,
         ...componentProps
     } = omit(props, 'dispatch');
@@ -203,6 +204,7 @@ const GUIComponent = props => {
                         <Alerts className={styles.alertsContainer} />
                     ) : null}
                 </StageWrapper>
+                {alwaysEnabledModals}
                 {usernameModalVisible && <TWUsernameModal />}
                 {settingsModalVisible && <TWSettingsModal />}
                 {extensionsManagerModalVisible && <ExtensionManagerModal />}
@@ -213,6 +215,7 @@ const GUIComponent = props => {
                 dir={isRtl ? 'rtl' : 'ltr'}
                 {...componentProps}
             >
+                {alwaysEnabledModals}
                 {usernameModalVisible && <TWUsernameModal />}
                 {settingsModalVisible && <TWSettingsModal />}
                 {extensionsManagerModalVisible && <ExtensionManagerModal />}
@@ -303,6 +306,7 @@ const GUIComponent = props => {
                         onShare={onShare}
                         onStartSelectingFileUpload={onStartSelectingFileUpload}
                         onToggleLoginOpen={onToggleLoginOpen}
+                        username={username}
                     />
                 ) : null}
                 <Box className={styles.bodyWrapper}>
@@ -508,7 +512,8 @@ GUIComponent.propTypes = {
     settingsModalVisible: PropTypes.bool,
     extensionsManagerModalVisible: PropTypes.bool,
     customExtensionModalVisible: PropTypes.bool,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    username: PropTypes.string
 };
 GUIComponent.defaultProps = {
     backpackHost: null,

@@ -1,5 +1,5 @@
-// Video sharing (v2.4.1) by pooiod7
-// The successor to ScreenSharing
+// Video sharing (v2.4.2) by pooiod7
+// Was originally the "ScreenSharing" extension
 
 (function(Scratch) {
   'use strict';
@@ -21,7 +21,7 @@
 
   let haswarned;
   function shouldwarn(){
-    return Scratch.vm.runtime.isPackaged;
+    return !Scratch.vm.runtime.isPackaged;
   }
 
   class VideoSharing {
@@ -245,18 +245,12 @@
     }
 
     startScreenSharing() {
-      if (this.isSharing()) {
-        this.stopSharing();
-      }
+      if (this.isSharing()) this.stopSharing();
 
-      if (!this.canScreen()) {
-        return;
-      }
+      if (!this.canScreen()) return;
 
       if (shouldwarn()) {
-        if (!this.warn("screen")) {
-          return;
-        }
+        if (!this.warn("screen")) return;
       }
       
       return new Promise((resolve) => {
@@ -283,14 +277,10 @@
     }
 
     startCameraSharing() {
-      if (this.isSharing()) {
-        this.stopSharing();
-      }
+      if (this.isSharing()) this.stopSharing();
 
       if (shouldwarn()) {
-        if (!this.warn("camera")) {
-          return;
-        }
+        if (!this.warn("camera")) return;
       }
       
       return new Promise((resolve, reject) => {
@@ -326,14 +316,10 @@
     }
 
     getHEX(args) {
-      if (!this.isSharing()) {
-        return;
-      }
+      if (!this.isSharing()) return;
       
       var rez = args.REZ;
-      if (rez > 1) {
-        rez = 1;
-      }
+      if (rez > 1) rez = 1;
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
       const width = videoElement.videoWidth * rez;
@@ -357,14 +343,10 @@
     }
 
     getPNG(args) {
-      if (!this.isSharing()) {
-        return;
-      }
+      if (!this.isSharing()) return;
       
       var rez = args.REZ;
-      if (rez > 1) {
-        rez = 1;
-      }
+      if (rez > 1) rez = 1;
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
       const width = videoElement.videoWidth * rez;
@@ -380,14 +362,10 @@
     }
 
     getJPEG(args) {
-      if (!this.isSharing()) {
-        return;
-      }
+      if (!this.isSharing()) return;
       
       let rez = args.REZ;
-      if (rez > 1) {
-        rez = 1;
-      }
+      if (rez > 1) rez = 1;
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
       const width = videoElement.videoWidth * rez;
@@ -404,14 +382,10 @@
     }
 
     getWEBP(args) {
-      if (!this.isSharing()) {
-        return;
-      }
+      if (!this.isSharing()) return;
       
       let rez = args.REZ;
-      if (rez > 1) {
-        rez = 1;
-      }
+      if (rez > 1) rez = 1;
 
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');

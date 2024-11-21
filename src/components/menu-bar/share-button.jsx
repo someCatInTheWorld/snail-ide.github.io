@@ -28,7 +28,7 @@ const getProjectUri = () => new Promise(resolve => {
 const isUploadAvailable = async () => {
     let res = null;
     try {
-        res = await fetch('https://snailshare.xyz/api');
+        res = await fetch('https://snailshare.dreamhosters.com/api');
     } catch {
         // failed to fetch entirely
         return false;
@@ -60,7 +60,7 @@ class ShareButton extends React.Component {
         this.handleMessageEvent(e);
     }
     async handleMessageEvent(e) {
-        if (!e.origin.startsWith(`https://snail-ide.com`)) {
+        if (!e.origin.startsWith(`https://www.snail-ide.com`)) {
             return;
         }
 
@@ -138,7 +138,23 @@ class ShareButton extends React.Component {
             }
 
             const url = location.origin;
-            window.open(`https://snail-ide.com/upload?name=${this.props.projectTitle}${remixPiece}`, '_blank');
+            const popup = window.open(`https://www.snail-ide.com/upload?name=${this.props.projectTitle}${remixPiece}`, '_blank');
+            const imageUri = this.state.imageUri;
+            popup.onload(async () => {
+                popup.postMessage({
+                    p4: {
+                        type: 'image',
+                        uri: imageUri
+                    }
+                }, e.origin);
+                const projectUri = await getProjectUri();
+                popup.postMessage({
+                    p4: {
+                        type: 'project',
+                        uri: projectUri
+                    }
+                }, e.origin);
+            });
         });
     }
     render() {

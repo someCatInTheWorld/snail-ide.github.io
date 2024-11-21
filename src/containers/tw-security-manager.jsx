@@ -27,6 +27,7 @@ const isTrustedExtension = url => (
     url.startsWith('https://snail-ide.js.org/') ||
     url.startsWith('https://snail-ide.vercel.app/') ||
     url.startsWith('https://snail-ide.com/') ||
+    url.startsWith('https://editor.snail-ide.com/') ||
     url.startsWith('https://sharkpools-extensions.vercel.app/') ||
     url.startsWith('https://rubyteam.tech/cdn/extensions/') ||
     url.startsWith('https://nmsderp.is-a.dev/') ||

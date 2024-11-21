@@ -3,15 +3,15 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import VideoSharing from './VidShare/VideoSharing.svg';
+import SuperStorage from './SuperStorage/SuperStorage.svg';
 import NoahgptThumb from './noahgpt/costume1.svg';
 import typescriptIcon from './snail-ide/typescript.svg';
 import twGalleryIcon from './snail-ide/turbowarpgallery.svg';
 import pmGalleryIcon from './snail-ide/penguinmodgallery.svg';
-import rubyDevsGalleryIcon from './snail-ide/ruby.png';
 import musicIconURL from './music/music.png';
 import roku from './roku/roku.png';
 import share from './share/share.svg';
-import cloudstorageIconURL from './cloudstorage/costume1.svg';
+import cloudstorageIconURL from './cloudstorage/CloudStorage.svg';
 import pythonIcon from './python/py.svg';
 import extCreateIcon from './ext-create/logo.svg';
 import extCreateInset from './ext-create/inset.svg';
@@ -22,6 +22,8 @@ import issIcon from './snail-ide/iss.jpg';
 import musicInsetIconURL from './music/music-small.svg';
 import clfiveIcon from './cloudlink/cl5.svg';
 import clomegaIcon from './cloudlink/clomega.svg';
+import browserAndOSInfoIcon from './browserandosinfo/browserandosinfo.png';
+import URLInfoIcon from './urlinfo/urlinfo.png';
 
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
@@ -229,15 +231,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Screensharing',
-        extensionId: 'https://editor.snail-ide.com/screen-sharing.js',
-        iconURL: 'https://editor.snail-ide.com/Screensharing.png', // please forgive me the text is slightly offcenter
-        collaborator: 'pooiod7',
-        tags: ['penguinmod'],
-        description: 'Share your screen and get the current frame as a image.',
-        featured: true
-    },
-    {
         name: 'VideoSharing',
         extensionId: 'https://editor.snail-ide.com/VideoSharing.js',
         iconURL: VideoSharing,
@@ -351,51 +344,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'PenguinGPT',
-        extensionId: 'https://editor.snail-ide.com/penguingpt.js',
-        collaborator: 'cicerorph & Anonymous-cat1',
-        iconURL: 'https://rubyteam.tech/cdn/thumbnails/penguingpt.png',
-        tags: ['turbowarp', 'ai'],
-        description: 'ChatGPT in Snail IDE/PenguinMod has been taken to a whole new level with PenguinGPT. (This replaces the ChatGPT extension and is backwards compatible)',
-        featured: true
-    },
-    {
-        name: 'Gemini',
-        extensionId: 'https://rubyteam.tech/cdn/extensions/geminiai.js',
-        collaborator: 'cicerorph',
-        iconURL: 'https://rubyteam.tech/cdn/thumbnails/turbogemini.webp',
-        tags: ['turbowarp', 'ai'],
-        description: 'Use Google Gemini in your projects',
-        featured: true
-    },
-    {
-        name: 'Analytics',
-        extensionId: 'https://rubyteam.tech/cdn/extensions/analytics.js',
-        collaborator: 'cicerorph',
-        iconURL: 'https://rubyteam.tech/cdn/thumbnails/analytics.webp',
-        tags: ['turbowarp', 'penguinmod'],
-        description: 'Measure how many people are using your projects using the Ruby API.',
-        featured: true
-    },
-    {
-        name: 'PenguinPedia',
-        extensionId: 'https://rubyteam.tech/cdn/extensions/penguinpedia.js',
-        collaborator: 'Gen1X',
-        iconURL: 'https://rubyteam.tech/cdn/thumbnails/penguinpedia.webp',
-        tags: ['penguinmod'],
-        description: 'Get a lot of data from Wikipedia, like definitions and images!',
-        featured: true,
-    },
-    {
-        name: '1MB Shortener',
-        extensionId: 'https://rubyteam.tech/cdn/extensions/1mb.js', // update reference once file names are updated
-        tags: ['turbowarp'],
-        iconURL: 'https://rubyteam.tech/cdn/thumbnails/1mb.svg',
-        description: 'Using 1mb Api you can now share links without it being long!',
-        featured: true,
-        collaborator: 'cicerorph'
-    },
-    {
         name: 'Random Utils',
         extensionId: 'https://editor.snail-ide.com/random_utils.js',
         snailExt: true,
@@ -460,13 +408,24 @@ const menuItems = [
     //    featured: true
     // },
     {
-        name: 'TurboBuilder',
-        href: 'https://turbobuilder-steel.vercel.app',
+        name: 'TurboBuilder - Dev Branch',
+        href: 'https://turbobuilder-dev.vercel.app/',
         extensionId: 'special_turboBuilder',
-        iconURL: 'https://studio.penguinmod.com/static/assets/93db39f338237e6a51790829ba22a879.png',
+        iconURL: 'https://studio.penguinmod.com/static/assets/78d464ee4e15000ce44b841ff2f4c518.png',
         description: 'Create your own amazing extensions using a scratch-based UI!',
         collaborator: 'Started by JeremyGamer13, continued by jwklong',
         tags: ['builders'],
+        featured: true
+    },
+    {
+        name: 'TurboBuilder',
+        href: 'https://turbobuilder-dev.vercel.app/',
+        extensionId: 'special_turboBuilder',
+        iconURL: 'https://studio.penguinmod.com/static/assets/78d464ee4e15000ce44b841ff2f4c518.png',
+        description: 'Create your own amazing extensions using a scratch-based UI!',
+        collaborator: 'Started by JeremyGamer13, continued by jwklong',
+        tags: ['builders'],
+        disabled: true,
         featured: true
     },
     {
@@ -574,9 +533,18 @@ const menuItems = [
         name: 'Cloud Storage',
         extensionId: 'https://editor.snail-ide.com/cloudstorage.js',
         collaborator: 'pooiod7',
-        iconURL: cloudstorageIconURL, // this needs to be redone soon
+        iconURL: cloudstorageIconURL,
         tags: ['penguinmod'],
         description: 'Store data in a database, similar to Storage and Better Storage, but powered by a Snap! extension.',
+        featured: true
+    },
+    {
+        name: 'SuperStorage',
+        extensionId: 'https://editor.snail-ide.com/SuperStorage.js',
+        iconURL: SuperStorage,
+        tags: ['penguinmod'],
+        description: 'Store and retrieve data locally on device or remotely on a server.',
+        collaborator: 'pooiod7',
         featured: true
     },
     {
@@ -705,10 +673,10 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Numerical Encoding',
-        extensionId: 'https://extensions.turbowarp.org/cs2627883/numericalencoding.js',
-        twDeveloper: 'cs2627883',
-        iconURL: 'https://extensions.turbowarp.org/images/cs2627883/numericalencoding.svg',
+        name: 'Numerical Encoding V2',
+        extensionId: 'https://extensions.turbowarp.org/numerical-encoding-2.js',
+      // tw dosen't specify who made it
+        iconURL: 'https://extensions.turbowarp.org/images/numerical-encoding-2.svg',
         insetIconURL: turbowarpIcon,
         tags: ['turbowarp'],
         description: 'Encode strings as numbers for cloud variables',
@@ -979,21 +947,20 @@ const menuItems = [
         name: 'Longman Dictionary',
         extensionId: 'https://extensions.turbowarp.org/veggiecan/LongmanDictionary.js', // update reference once file names are updated
         tags: ['turbowarp'],
-        iconURL: 'https://extensions.turbowarp.org/images/veggiecan/LongmanDictionary.png',
+        iconURL: 'https://extensions.turbowarp.org/images/veggiecan/LongmanDictionary.svg',
         insetIconURL: turbowarpIcon,
         description: 'Get the definitions of words from the Longman Dictionary',
         featured: true,
         twDeveloper: 'veggiecan0419'
     },
     {
-        name: 'Beepbox',
-        extensionId: 'beepboxsynth', // update reference once file names are updated
-        tags: ['turbowarp'],
-        iconURL: 'https://jasonglenevans.github.io/GvbvdxxMod2/static/assets/d0a53858e0c079c8b99e85a652b4d1d9.png',
-        insetIconURL: 'https://jasonglenevans.github.io/GvbvdxxMod2/static/assets/ba43bca2715721d8cb5ddbdb38267da0.png',
-        description: 'Make some moosic',
+        name: 'Beepbox Player',
+        extensionId: 'https://extensions.penguinmod.com/extensions/DogeisCut/BeepBoxPlayer.js',
+        tags: ['penguinmod'],
+        iconURL: 'https://extensions.penguinmod.com/images/DogeisCut/BeepBoxPlayer.svg',
+        description: 'Play, edit, and read songs from any BeepBox mod directly from the URL or JSON!',
         featured: true,
-        twDeveloper: 'jasonglenevans'
+        collaborator: 'DogeisCut'
     },
     {
         name: (
@@ -1172,30 +1139,6 @@ const menuItems = [
         featured: true
     },
 
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="Ruby Extension Gallery"
-                description="Name of https://rubyteam.tech/gallery in extension library"
-                id="ruby.extensionGallery.name"
-            />
-        ),
-        href: 'https://rubyteam.tech/gallery',
-        extensionId: 'special_rubyGallery',
-        insetIconURL: 'https://rubyteam.tech/logo.svg',
-        iconURL: rubyDevsGalleryIcon,
-        description: (
-            <FormattedMessage
-                // eslint-disable-next-line max-len
-                defaultMessage="View Other Useful Ruby Team Extensions!"
-                description="Description of extensions.turbowarp.org in extension library"
-                id="ruby.extensionGallery.description"
-            />
-        ),
-        tags: ['penguinmod'],
-        featured: true
-    },
-
     // https://extensions.turbowarp.org/shreder95ua/resolution.js
     {
         name: 'Screen Resolution',
@@ -1247,6 +1190,24 @@ const menuItems = [
         iconURL: issIcon,
         tags: ['penguinmod'],
         description: 'Get the latitude and longitude of the International Space Station',
+        featured: true
+    },
+    {
+        name: 'Browser & OS Information',
+        extensionId: 'https://editor.snail-ide.com/browserandosinfo.js',
+        iconURL: browserAndOSInfoIcon,
+        tags: ['penguinmod'],
+        collaborator: 'redspacecat',
+        description: 'Get information about the user\'s browser and operating system',
+        featured: true
+    },
+    {
+        name: 'URL Information',
+        extensionId: 'https://editor.snail-ide.com/urlinfo.js',
+        iconURL: URLInfoIcon,
+        tags: ['penguinmod'],
+        collaborator: 'redspacecat',
+        description: 'Get information about the URL',
         featured: true
     },
     {
@@ -1626,6 +1587,16 @@ if (IsLocal || IsLiveTests) {
             description: 'Use maps in your project. W.I.P Extension.',
             featured: true,
             internetConnectionRequired: true
+        },
+        {
+            name: 'Numerical Encoding',
+            extensionId: 'https://extensions.turbowarp.org/cs2627883/numericalencoding.js',
+            twDeveloper: 'cs2627883',
+            iconURL: 'https://extensions.turbowarp.org/images/cs2627883/numericalencoding.svg',
+            insetIconURL: turbowarpIcon,
+            tags: ['turbowarp'],
+            description: 'Encode strings as numbers for cloud variables',
+            featured: true
         },
         
     {

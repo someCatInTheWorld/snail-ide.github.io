@@ -169,11 +169,12 @@ const extensionDevelopers = [
     'DT-is-not-available',
     'SharkPool-SP',
     'GingerNinjaStickdudeWorld',
-    'Vadik1',
+    'Xeltalliv',
     'MikeDev101',
     'LilyMakesThings',
     'CharcoalAfterlife',
-    'pooiod'
+    'pooiod',
+    'dogeiscut'
 ].map(fromHardcodedGithub);
 
 export default {

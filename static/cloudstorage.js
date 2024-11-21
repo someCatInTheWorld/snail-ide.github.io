@@ -1,5 +1,4 @@
-// Simple file storage made with tools from Snap!
-// Be careful, data can be replaced
+// Simple file storage made with tools from Snap! (v1.2) by pooiod7
 
 class ServerExtension {
   constructor(runtime) {
@@ -30,13 +29,24 @@ class ServerExtension {
           },
         },
         {
+          opcode: 'deleteFromServer',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'Delete [variableName]',
+          arguments: {
+            variableName: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'default.txt',
+            },
+          },
+        },
+        {
           opcode: 'loadFromServer',
           blockType: Scratch.BlockType.REPORTER,
           text: 'Load [variableName]',
           arguments: {
             variableName: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'data.txt',
+              defaultValue: 'default.txt',
             },
           },
         },
@@ -61,6 +71,24 @@ class ServerExtension {
       .then(result => (result === 'ok'))
       .catch(error => {
         console.error('Failed to save data:', error);
+        return false;
+      });
+  }
+  
+  deleteFromServer(args, util) {
+    const variableName = args.variableName;
+    const content = args.content;
+
+    const url =
+      this.serverURL +
+      '?type=delete&filename=./textfiles/' +
+      encodeURIComponent(variableName);
+
+    return fetch(url)
+      .then(response => response.text())
+      .then(result => (result === 'ok'))
+      .catch(error => {
+        console.error('Failed to delete data:', error);
         return false;
       });
   }

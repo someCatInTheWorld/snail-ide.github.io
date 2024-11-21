@@ -80,3 +80,12 @@ im thinking about making a page to read this entire file cuz why not
 - trying to fix color stuff
 - EDIT 26 (nmsderp) 4/26/2024 2:58 PM
 - lolz
+
+- EDIT 27 (someCatInTheWorld) 26/7/2024 AEST
+- Added (current [millisecond]).
+
+- EDIT 27 (someCatInTheWorld) 27/7/2024 AEST
+- Help, a race condition just happened.
+
+- EDIT 29 (someCatInTheWorld) 25/8/2024 AEST
+- Added preliminal error handling.
