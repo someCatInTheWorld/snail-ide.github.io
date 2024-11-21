@@ -1349,49 +1349,6 @@ const menuItems = [
         collaborator: "PenguinMod",
         featured: true
     },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="PenguinMod Extra Extensions"
-                description="Name of library item to open the Extra Extensions gallery"
-                id="pm.extraLibraryExtensions.name"
-            />
-        ),
-        href: 'https://extensions.penguinmod.com/',
-        extensionId: 'special_penguinmodExtensionLibrary',
-        iconURL: 'https://studio.penguinmod.com/static/assets/7a4510ab192e5a0bd0b1186db1396bce.svg',
-        description: (
-            <FormattedMessage
-                defaultMessage="See some user-submitted extensions. Opens in a new tab."
-                description="Description of library item to open the Extra Extensions gallery"
-                id="pm.extraLibraryExtensions.description"
-            />
-        ),
-        tags: ['penguinmod'],
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="TurboWarp Extension Gallery"
-                description="Name of extensions.turbowarp.org in extension library"
-                id="tw.extensionGallery.name"
-            />
-        ),
-        href: 'https://extensions.turbowarp.org/',
-        extensionId: 'special_turbowarpExtensionLibrary',
-        iconURL: twGalleryIcon,
-        description: (
-            <FormattedMessage
-                // eslint-disable-next-line max-len
-                defaultMessage="We list many TurboWarp extensions here for convenience, but you can find even more on extensions.turbowarp.org."
-                description="Description of extensions.turbowarp.org in extension library"
-                id="tw.extensionGallery.description"
-            />
-        ),
-        tags: ['penguinmod'],
-        featured: true
-    },
 
     // https://extensions.turbowarp.org/shreder95ua/resolution.js
     {
@@ -1438,49 +1395,6 @@ const menuItems = [
         tags: ['penguinmod'],
         description: "Unfinished PenguinMod Extension.",
         collaborator: "PenguinMod",
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="PenguinMod Extra Extensions"
-                description="Name of library item to open the Extra Extensions gallery"
-                id="pm.extraLibraryExtensions.name"
-            />
-        ),
-        href: 'https://extensions.penguinmod.com/',
-        extensionId: 'special_penguinmodExtensionLibrary',
-        iconURL: 'https://studio.penguinmod.com/static/assets/7a4510ab192e5a0bd0b1186db1396bce.svg',
-        description: (
-            <FormattedMessage
-                defaultMessage="See some user-submitted extensions. Opens in a new tab."
-                description="Description of library item to open the Extra Extensions gallery"
-                id="pm.extraLibraryExtensions.description"
-            />
-        ),
-        tags: ['penguinmod'],
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="TurboWarp Extension Gallery"
-                description="Name of extensions.turbowarp.org in extension library"
-                id="tw.extensionGallery.name"
-            />
-        ),
-        href: 'https://extensions.turbowarp.org/',
-        extensionId: 'special_turbowarpExtensionLibrary',
-        iconURL: twGalleryIcon,
-        description: (
-            <FormattedMessage
-                // eslint-disable-next-line max-len
-                defaultMessage="We list many TurboWarp extensions here for convenience, but you can find even more on extensions.turbowarp.org."
-                description="Description of extensions.turbowarp.org in extension library"
-                id="tw.extensionGallery.description"
-            />
-        ),
-        tags: ['penguinmod'],
         featured: true
     },
 
@@ -1791,29 +1705,6 @@ const menuItems = [
     },
     {
         // not really an extension, but it's easiest to present it as one
-        name: 'TurboBuilder',
-        href: 'https://turbobuilder.vercel.app/',
-        extensionId: 'special_turboBuilder',
-        iconURL: turboBuilderIcon,
-        description: 'Create your own amazing extensions using a scratch-based UI!',
-        credits: 'Started by JeremyGamer13, continued by jwklong',
-        tags: ['extcreate'],
-        featured: true,
-        disabled: !(IsLocal || IsLiveTests)
-    },
-    {
-        // not really an extension, but it's easiest to present it as one
-        name: 'TurboBuilder - Dev Branch',
-        href: 'https://turbobuilder-dev.vercel.app/',
-        extensionId: 'special_turboBuilderDev',
-        iconURL: turboBuilderDevIcon,
-        description: 'Publicly available developer branch, with the latest features.',
-        credits: 'Started by JeremyGamer13, continued by jwklong',
-        tags: ['extcreate'],
-        featured: true
-    },
-    {
-        // not really an extension, but it's easiest to present it as one
         name: (
             <FormattedMessage
                 defaultMessage="Custom Extension"
@@ -1931,25 +1822,6 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod', 'datamgmt'],
             description: 'Save variables, lists and extra info to a file, then load those things back in.',
-            featured: true
-        },
-        {
-            name: (
-                <FormattedMessage
-                    defaultMessage="TurboWarp Blocks"
-                    description="Name of TW extension"
-                    id="tw.twExtension.name"
-                    values={{
-                        APP_NAME: "TurboWarp"
-                    }}
-                />
-            ),
-            extensionId: 'tw',
-            twDeveloper: 'GarboMuffin',
-            tags: ['turbowarp'],
-            insetIconURL: turbowarpIcon,
-            iconURL: twIcon,
-            description: 'Weird new blocks. Replaced by Sensing Expansion.',
             featured: true
         },
         {
