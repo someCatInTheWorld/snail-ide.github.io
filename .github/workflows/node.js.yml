@@ -26,6 +26,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
+    - name: Install Python 2
+      run: |
+        sudo apt-get update
+        sudo apt install python2-minimal
     - name: Install dependencies and build site
       run: npm i -g pnpm@7 && pnpm up && pnpm i --shamefully-hoist && webpack --bail && zip -r release.zip build
     - name: Upload artifact
