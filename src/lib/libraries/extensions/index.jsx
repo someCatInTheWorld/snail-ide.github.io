@@ -162,6 +162,7 @@ import sharkpoolPrintingIcon from './penguinmod/extensions/printing.svg';
 import sharkpoolTuneIcon from './penguinmod/extensions/tuneShark.svg';
 import sharkpoolMBPIcon from './penguinmod/extensions/myBlocksPlus.svg';
 import sharkpoolBCIcon from './penguinmod/extensions/BetterComments.svg';
+import sharkpoolPEIcon from './penguinmod/extensions/particleEngine.svg';
 import jgScriptsExtensionIcon from './penguinmod/extensions/scripts.svg';
 
 // events
@@ -891,6 +892,15 @@ const menuItems = [
         iconURL: jgJSONExtensionIcon,
         tags: ['penguinmod', 'datamgmt'],
         description: 'Blocks for handling JSON objects and Arrays.',
+        featured: true
+    },
+    {
+        name: 'Particle Engine',
+        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/Particle-Engine.js',
+        iconURL: sharkpoolPEIcon,
+        tags: ['penguinmod', 'graphics'],
+        description: 'Create powerful Particle Engines without Clones',
+        extDeveloper: 'SharkPool',
         featured: true
     },
     {
