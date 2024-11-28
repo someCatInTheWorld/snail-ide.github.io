@@ -43,6 +43,7 @@ import TWCustomExtensionModal from '../../containers/tw-custom-extension-modal.j
 import TWRestorePointManager from '../../containers/tw-restore-point-manager.jsx';
 import TWFontsModal from '../../containers/tw-fonts-modal.jsx';
 import PMExtensionModals from '../../containers/pm-extension-modals.jsx';
+import ExtensionManagerModal from '../../containers/extensions-modal.jsx';
 
 import layout, {STAGE_SIZE_MODES} from '../../lib/layout-constants';
 import {resolveStageSize} from '../../lib/screen-utils';

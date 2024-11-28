@@ -86,7 +86,7 @@ const formatProjectTitle = _title => {
     return title.replace(emojiRegex, match => {
         const emojiName = match.replace(/:/gmi, '');
         return `<img
-            src="https://library.penguinmod.com/files/emojis/${emojiName}.png"
+            src="https://snail-ide-object-libraries.vercel.app/files/emojis/${emojiName}.png"
             alt=":${emojiName}:"
             title=":${emojiName}:"
             style="width:1.75rem;vertical-align: middle;"
@@ -230,9 +230,9 @@ const Footer = () => (
                             id="tw.examples"
                         />
                     </a>
-                    <a href="https://snail-ide.js.org/editor.html?livetests">
+                    <a href="editor.html?livetests">
                         <FormattedMessage
-                            defaultMessage="Live Tests"
+                            defaultMessage="Live Tests (Unstable)"
                             description="Opens the livetests page"
                             id="tw.livetests"
                         />
@@ -242,13 +242,6 @@ const Footer = () => (
                             defaultMessage="Scratch Studio"
                             description="Link to scratch studio"
                             id="tw.snail-studio"
-                        />
-                    </a>
-                    <a href="https://scratch.mit.edu/discuss/topic/689165/">
-                        <FormattedMessage
-                            defaultMessage="Scratch Forum Topic"
-                            description="Link to the Scratch forum topic for Snail IDE"
-                            id="si.scratch-forum-topic"
                         />
                     </a>
                     <a href="https://www.snail-ide.com/forum">
@@ -330,7 +323,7 @@ class Interface extends React.Component {
     }
     copyProjectLink (id) {
         if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
-            navigator.clipboard.writeText(`https://editor.snail-ide.com/${id}`);
+            navigator.clipboard.writeText(`https://editor.snail-ide.com/#${id}`);
         }
     }
     render () {

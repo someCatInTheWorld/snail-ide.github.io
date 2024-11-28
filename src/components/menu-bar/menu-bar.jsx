@@ -31,7 +31,7 @@ import ChangeUsername from '../../containers/tw-change-username.jsx';
 import CloudVariablesToggler from '../../containers/tw-cloud-toggler.jsx';
 import TWSaveStatus from './tw-save-status.jsx';
 
-import { openTipsLibrary, openSettingsModal, openRestorePointModal } from '../../reducers/modals';
+import { openTipsLibrary, openSettingsModal, openRestorePointModal, openExtManagerModal } from '../../reducers/modals';
 import { setPlayer } from '../../reducers/mode';
 import {
     autoUpdateProject,

@@ -8,6 +8,14 @@
     background: $ui-white;
     padding: 1.5rem 2.25rem;
 }
+
+.centered {
+    background: $ui-white;
+    padding: 1.5rem 2.25rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 [theme="dark"] .body {
     color: $text-primary;
     background: $ui-primary;
