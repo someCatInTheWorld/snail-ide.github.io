@@ -31,7 +31,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install python2-minimal
     - name: Install dependencies and build site
-      run: npm i -g pnpm@latest && pnpm up && pnpm i --shamefully-hoist && NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --bail
+      run: npm i -g pnpm@latest && pnpm up && NODE_OPTIONS=--openssl-legacy-provider pnpm i --shamefully-hoist && NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --bail
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
