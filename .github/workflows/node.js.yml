@@ -25,13 +25,13 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
+        node-version: 22.x
     - name: Install Python 2
       run: |
         sudo apt-get update
         sudo apt-get install python2-minimal
     - name: Install dependencies and build site
-      run: npm i -g pnpm@7 && pnpm up && pnpm i --shamefully-hoist && NODE_ENV=production webpack --bail
+      run: npm i -g pnpm@latest && pnpm up && pnpm i --shamefully-hoist && NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --bail
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
