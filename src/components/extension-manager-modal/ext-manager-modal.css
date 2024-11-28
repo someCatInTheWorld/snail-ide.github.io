@@ -6,11 +6,17 @@
 
 .body {
     background: $ui-white;
-    padding: 1.5rem 2.25rem;
-    min-height: 150px;
+    padding: 1.5rem;
     max-height: calc(100vh - 250px);
     overflow-y: auto;
 }
+.centered {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
 [theme="dark"] .body {
     color: $text-primary;
     background: $ui-primary;
@@ -80,4 +86,45 @@
 }
 [theme="dark"] .warning {
     background: rgb(114, 102, 0);
+}
+
+.manage-extensions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 2px solid $ui-black-transparent;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+.manage-extensions-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+.manage-extensions-buttons {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.manage-extensions-button {
+    background: none;
+    border: none;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.manage-extensions-button:hover {
+    background-color: $ui-black-transparent;
+}
+.manage-extensions-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
