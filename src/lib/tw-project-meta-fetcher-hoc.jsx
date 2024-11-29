@@ -102,7 +102,6 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     if (instructions || credits) {
                         this.props.onSetDescription(instructions, credits);
                     }
-                    console.log(rawData);
                     if (
                         String(rawData.remix) !== '0' // checks isRemix and remixId existing at the same time
                     ) {
