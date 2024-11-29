@@ -109,7 +109,6 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         || typeof rawData.tooLarge === 'boolean'
                         || authorName
                     ) {
-                        console.log(rawData.remix);
                         this.props.onSetExtraProjectInfo(
                             rawData.public && !rawData.softRejected,
                             String(rawData.remix) !== '0',
