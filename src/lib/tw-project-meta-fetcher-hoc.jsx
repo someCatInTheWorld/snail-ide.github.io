@@ -115,8 +115,6 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                             new Date(rawData.lastUpdate),
                             rawData.lastUpdate !== rawData.date
                         );
-                    }
-                    if (rawData.remix > 0) {
                         // this is a remix, find the original project
                         fetchProjectMeta(rawData.remix)
                             .then(remixProject => {
