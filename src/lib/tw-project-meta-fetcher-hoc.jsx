@@ -122,6 +122,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                                 if (this.props.projectId !== projectId) {
                                     return;
                                 }
+                                console.log(remixProject);
                                 this.props.onSetRemixedProjectInfo(
                                     true, // loaded
                                     remixProject.title,
