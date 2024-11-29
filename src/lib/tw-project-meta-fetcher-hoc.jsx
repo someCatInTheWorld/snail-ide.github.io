@@ -103,7 +103,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         this.props.onSetDescription(instructions, credits);
                     }
                     if (
-                        String(rawData.remix) !== '0' // checks isRemix and remixId existing at the same time
+                        rawData.public === true
                     ) {
                         this.props.onSetExtraProjectInfo(
                             rawData.public,
@@ -114,25 +114,27 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                             new Date(rawData.lastUpdate),
                             rawData.lastUpdate !== rawData.date
                         );
-                        // this is a remix, find the original project
-                        fetchProjectMeta(rawData.remix)
-                            .then(remixProject => {
-                                // If project ID changed, ignore the results.
-                                if (this.props.projectId !== projectId) {
-                                    console.log("hi skibward");
-                                    return;
-                                }
 
-                                this.props.onSetRemixedProjectInfo(
-                                    true, // loaded
-                                    remixProject.title,
-                                    remixProject.author.username
-                                );
-                            })
-                            .catch(err => {
-                                // this isnt fatal, just log
-                                log.warn('cannot fetch remixed project meta for this project;', err);
-                            });
+                        if (String(rawData.remix) !== '0') {
+                            // this is a remix, find the original project
+                            fetchProjectMeta(rawData.remix)
+                                .then(remixProject => {
+                                    // If project ID changed, ignore the results.
+                                    if (this.props.projectId !== projectId) {
+                                        return;
+                                    }
+
+                                    this.props.onSetRemixedProjectInfo(
+                                        true, // loaded
+                                        remixProject.title,
+                                        remixProject.author.username
+                                    );
+                                })
+                                .catch(err => {
+                                    // this isnt fatal, just log
+                                    log.warn('cannot fetch remixed project meta for this project;', err);
+                                });
+                        }
                     }
                     setIndexable(true);
                 })
