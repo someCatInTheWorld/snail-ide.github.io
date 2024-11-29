@@ -90,27 +90,23 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     if (this.props.projectId !== projectId) {
                         return;
                     }
-                    const title = data.name;
+                    const title = data.title;
                     if (title) {
                         this.props.onSetProjectTitle(title);
                     }
                     const authorName = data.author.username;
                     const authorThumbnail = `https://projects.penguinmod.com/api/v1/users/getpfp?username=${data.author.username}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
-                    const instructions = data.desc || '';
+                    const instructions = data.instructions || '';
                     const credits = data.notes || '';
                     if (instructions || credits) {
                         this.props.onSetDescription(instructions, credits);
                     }
                     if (
-                        typeof rawData.accepted === 'boolean'
-                        || typeof rawData.removedsoft === 'boolean'
-                        || String(rawData.remix) !== '0' // checks isRemix and remixId existing at the same time
-                        || typeof rawData.tooLarge === 'boolean'
-                        || authorName
+                        String(rawData.remix) !== '0' // checks isRemix and remixId existing at the same time
                     ) {
                         this.props.onSetExtraProjectInfo(
-                            rawData.public && !rawData.softRejected,
+                            rawData.public,
                             String(rawData.remix) !== '0',
                             String(rawData.remix),
                             false,
@@ -118,26 +114,20 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                             new Date(rawData.lastUpdate),
                             rawData.lastUpdate !== rawData.date
                         );
-                    }
-                    if (rawData.remix > 0) {
                         // this is a remix, find the original project
                         fetchProjectMeta(rawData.remix)
                             .then(remixProject => {
                                 // If project ID changed, ignore the results.
                                 if (this.props.projectId !== projectId) {
+                                    console.log("hi skibward");
                                     return;
                                 }
-                                // If this project is hidden or not approved, ignore the results.
-                                if (
-                                    typeof remixProject.name === 'string'
-                                    || typeof remixProject.owner === 'string'
-                                ) {
-                                    this.props.onSetRemixedProjectInfo(
-                                        true, // loaded
-                                        remixProject.name,
-                                        remixProject.owner
-                                    );
-                                }
+
+                                this.props.onSetRemixedProjectInfo(
+                                    true, // loaded
+                                    remixProject.title,
+                                    remixProject.author.username
+                                );
                             })
                             .catch(err => {
                                 // this isnt fatal, just log
