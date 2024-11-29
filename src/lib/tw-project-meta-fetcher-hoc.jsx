@@ -97,7 +97,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     const authorName = data.author.username;
                     const authorThumbnail = `https://projects.penguinmod.com/api/v1/users/getpfp?username=${data.author.username}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
-                    const instructions = data.instructions || '';
+                    const instructions = data.desc || '';
                     const credits = data.notes || '';
                     if (instructions || credits) {
                         this.props.onSetDescription(instructions, credits);
