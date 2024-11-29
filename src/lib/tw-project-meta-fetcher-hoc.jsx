@@ -122,11 +122,17 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                                 if (this.props.projectId !== projectId) {
                                     return;
                                 }
-                                this.props.onSetRemixedProjectInfo(
-                                    true, // loaded
-                                    remixProject.name,
-                                    remixProject.owner
-                                );
+                                // If this project is hidden or not approved, ignore the results.
+                                if (
+                                    typeof remixProject.name === 'string'
+                                    || typeof remixProject.owner === 'string'
+                                ) {
+                                    this.props.onSetRemixedProjectInfo(
+                                        true, // loaded
+                                        remixProject.name,
+                                        remixProject.owner
+                                    );
+                                }
                             })
                             .catch(err => {
                                 // this isnt fatal, just log
