@@ -124,8 +124,8 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                                 }
                                 this.props.onSetRemixedProjectInfo(
                                     true, // loaded
-                                    remixProject.title,
-                                    remixProject.author
+                                    remixProject.name,
+                                    remixProject.owner
                                 );
                             })
                             .catch(err => {
