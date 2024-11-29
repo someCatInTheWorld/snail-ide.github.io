@@ -103,13 +103,8 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         this.props.onSetDescription(instructions, credits);
                     }
                     if (
-                        typeof rawData.accepted === 'boolean'
-                        || typeof rawData.removedsoft === 'boolean'
-                        || String(rawData.remix) !== '0' // checks isRemix and remixId existing at the same time
-                        || typeof rawData.tooLarge === 'boolean'
-                        || authorName
+                        String(rawData.remix) !== '0' // checks isRemix and remixId existing at the same time
                     ) {
-                        console.log(rawData.remix);
                         this.props.onSetExtraProjectInfo(
                             rawData.public && !rawData.softRejected,
                             String(rawData.remix) !== '0',
