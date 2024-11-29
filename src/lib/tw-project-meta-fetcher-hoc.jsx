@@ -90,7 +90,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     if (this.props.projectId !== projectId) {
                         return;
                     }
-                    const title = data.title;
+                    const title = data.name;
                     if (title) {
                         this.props.onSetProjectTitle(title);
                     }
