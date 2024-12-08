@@ -122,31 +122,27 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                             new Date(rawData.date),
                             rawData.updating === true
                         );
-                    }
-                    if (rawData.remix > 0) {
-                        // this is a remix, find the original project
-                        fetchProjectMeta(rawData.remix)
-                            .then(remixProject => {
-                                // If project ID changed, ignore the results.
-                                if (this.props.projectId !== projectId) {
-                                    return;
-                                }
-                                // If this project is hidden or not approved, ignore the results.
-                                if (
-                                    typeof remixProject.name === 'string'
-                                    || typeof remixProject.owner === 'string'
-                                ) {
+
+                        if (String(rawData.remix) !== '0') {
+                            // this is a remix, find the original project
+                            fetchProjectMeta(rawData.remix)
+                                .then(remixProject => {
+                                    // If project ID changed, ignore the results.
+                                    if (this.props.projectId !== projectId) {
+                                        return;
+                                    }
+
                                     this.props.onSetRemixedProjectInfo(
                                         true, // loaded
-                                        remixProject.name,
-                                        remixProject.owner
+                                        remixProject.title,
+                                        remixProject.author.username
                                     );
-                                }
-                            })
-                            .catch(err => {
-                                // this isnt fatal, just log
-                                log.warn('cannot fetch remixed project meta for this project;', err);
-                            });
+                                })
+                                .catch(err => {
+                                    // this isnt fatal, just log
+                                    log.warn('cannot fetch remixed project meta for this project;', err);
+                                });
+                        }
                     }
                     setIndexable(true);
                 })
