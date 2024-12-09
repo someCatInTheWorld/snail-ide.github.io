@@ -127,18 +127,18 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                             // this is a remix, find the original project
                             fetchProjectMeta(rawData.remix)
                                 .then(remixProject => {
-                                    // If project ID changed, ignore the results.
-                                    if (this.props.projectId !== projectId) {
-                                        return;
+                                    // If this project is hidden or not approved, ignore the results.
+                                    if (
+                                        typeof remixProject.name === 'string'
+                                        || typeof remixProject.owner === 'string'
+                                    ) {
+                                        this.props.onSetRemixedProjectInfo(
+                                            true, // loaded
+                                            remixProject.name,
+                                            remixProject.owner
+                                        );
                                     }
-
-                                    this.props.onSetRemixedProjectInfo(
-                                        true, // loaded
-                                        remixProject.title,
-                                        remixProject.author.username
-                                    );
-                                })
-                                .catch(err => {
+                                }).catch(err => {
                                     // this isnt fatal, just log
                                     log.warn('cannot fetch remixed project meta for this project;', err);
                                 });
