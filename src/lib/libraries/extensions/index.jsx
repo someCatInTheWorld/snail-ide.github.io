@@ -757,25 +757,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'CATS',
-        extensionId: 'https://extensions.penguinmod.com/extensions/Gen1x/CATS.js',
-        iconURL: 'https://extensions.penguinmod.com/images/Gen1x/cats.png',
-        tags: ['penguinmod', 'joke'],
-        description: 'Blocks related to cats.',
-        extDeveloper: 'G1nX',
-        featured: true
-    },
-    {
-        name: 'McUtils',
-        extensionId: 'https://extensions.turbowarp.org/Lily/McUtils.js',
-        tags: ['turbowarp', 'joke'],
-        iconURL: 'https://extensions.turbowarp.org/images/Lily/McUtils.png',
-        insetIconURL: turbowarpIcon,
-        description: 'Basic utilities for any fast food employee',
-        featured: true,
-        twDeveloper: 'LilyMakesThings'
-    },
-    {
         name: 'GamePad',
         extensionId: 'Gamepad',
         tags: ['turbowarp', 'hardware'],
@@ -1242,6 +1223,25 @@ if (IsLocal || IsLiveTests) {
             tags: ['penguinmod', 'joke'],
             description: 'the super good utilities brought to you by todays sponsor sharkpool (the epic utilities)',
             featured: true
+        },
+        {
+            name: 'CATS',
+            extensionId: 'https://extensions.penguinmod.com/extensions/Gen1x/CATS.js',
+            iconURL: 'https://extensions.penguinmod.com/images/Gen1x/cats.png',
+            tags: ['penguinmod', 'joke'],
+            description: 'Blocks related to cats.',
+            extDeveloper: 'G1nX',
+            featured: true
+        },
+        {
+            name: 'McUtils',
+            extensionId: 'https://extensions.turbowarp.org/Lily/McUtils.js',
+            tags: ['turbowarp', 'joke'],
+            iconURL: 'https://extensions.turbowarp.org/images/Lily/McUtils.png',
+            insetIconURL: turbowarpIcon,
+            description: 'Basic utilities for any fast food employee',
+            featured: true,
+            twDeveloper: 'LilyMakesThings'
         },
         {
             name: 'image blocks',
