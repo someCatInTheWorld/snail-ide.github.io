@@ -624,7 +624,7 @@ const menuItems = [
         iconURL: 'https://extensions.penguinmod.com/images/SammerLOL/pangapi.png',
         tags: ['penguinmod'],
         description: 'Fetch information from the PenguinMod API.',
-        extDeveloper: 'oc9x97',
+        extDeveloper: 'oc9x97, Ianyourgod',
         featured: true
     },
     {
