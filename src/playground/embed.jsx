@@ -16,6 +16,7 @@ const getProjectId = () => {
     // For compatibility reasons, we first look at the hash.
     // eg. https://turbowarp.org/embed.html#1
     const hashMatch = location.hash.match(/#(.+)/);
+    console.log(hashMatch);
     if (hashMatch !== null) {
         return hashMatch[1];
     }
