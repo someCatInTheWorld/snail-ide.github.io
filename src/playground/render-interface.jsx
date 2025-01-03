@@ -209,7 +209,7 @@ const Footer = () => (
                             id="tw.privacy"
                         />
                     </a>
-                    <a href="https://discord.gg/NZ9MBMYTZh">
+                    <a href="https://github.com/PenguinMod/PenguinMod-Home/issues">
                         <FormattedMessage
                             defaultMessage="Feedback & Bugs"
                             description="Link to feedback/bugs page"
