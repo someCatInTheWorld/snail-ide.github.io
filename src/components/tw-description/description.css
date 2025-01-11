@@ -37,10 +37,10 @@
 }
 
 .emoji {
-	width: 1lh;
-	height: 1lh;
+	width: 1.4lh;
+	height: 1.4lh;
 	object-fit: contain;
-	vertical-align: middle;
+	vertical-align: bottom;
 }
 em .emoji {
     transform: skew(-12deg, 0deg);
