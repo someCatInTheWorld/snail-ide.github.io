@@ -37,8 +37,8 @@ const HashParserHOC = function (WrappedComponent) {
             window.removeEventListener('hashchange', this.handleHashChange);
         }
         handleHashChange () {
-            const hashMatch = window.location.hash.match(/#(\d+)/);
-            const hashProjectId = hashMatch === null ? defaultProjectId : hashMatch[1];
+            const hashMatch = window.location.hash.slice(1);
+            const hashProjectId = hashMatch === '' ? defaultProjectId : hashMatch;
             this.props.setProjectId(hashProjectId.toString());
         }
         render () {
